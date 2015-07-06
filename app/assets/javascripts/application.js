@@ -2,6 +2,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require webpatas/webpatas.js
+//= require init.js
 //= require_tree .
 //= require nprogress
 //= require nprogress-turbolinks
