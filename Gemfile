@@ -16,6 +16,7 @@ gem 'simple_form', '~> 3.0.2'
 gem 'devise'
 gem 'devise-i18n'
 gem 'activeadmin', github: 'activeadmin'
+gem 'bootstrap-sass', '~> 3.3.3'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'
