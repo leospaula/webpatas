@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706174508) do
+ActiveRecord::Schema.define(version: 20150706183207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,4 +66,39 @@ ActiveRecord::Schema.define(version: 20150706174508) do
   add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id", using: :btree
 
   add_foreign_key "sub_categories", "categories"
+
+  create_table "stores", force: :cascade do |t|
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "name",                                   null: false
+    t.string   "address"
+    t.string   "telephone"
+    t.string   "website"
+    t.text     "description"
+    t.string   "logo"
+    t.boolean  "accept_credit_card",     default: false
+    t.boolean  "accept_debit_card",      default: false
+    t.boolean  "delivers",               default: false
+    t.string   "delivery_hours"
+    t.string   "business_hours"
+    t.boolean  "blocked",                default: true
+    t.string   "cnpj"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "stores", ["email"], name: "index_stores_on_email", unique: true, using: :btree
+  add_index "stores", ["reset_password_token"], name: "index_stores_on_reset_password_token", unique: true, using: :btree
+
 end
