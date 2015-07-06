@@ -1,0 +1,29 @@
+.Button {
+  display: inline-block;
+  border: 0;
+  padding: 1.3rem;
+  background-color: $background-orange--button;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: $borderRadius--button;
+  font-size: 1.4rem;
+  transition: all .4 ease;
+
+  &:hover,
+  &:focus {
+    background-color: $background-orangeLight--button;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:active {
+    background-color: $background-orangeDark--button;
+  }
+}
+
+.Button--hero {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1.1rem;
+}
