@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  database: webpatas_development
+  username: postgres
+  password: postgres
+  host: localhost
+  poor: 5
+
+test:
+  adapter: postgresql
+  database: webpatas_test
+  username: postgres
+  password: postgres
+  host: localhost
+  poor: 5
+
+production:
+  adapter: postgresql
+  database: webpatas_production
+  host: localhost
+  poor: 5
