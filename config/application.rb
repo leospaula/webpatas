@@ -21,5 +21,6 @@ module Webpatas
       g.test_framework false
     end
     config.i18n.default_locale = 'pt-BR'
+    config.autoload_paths << "#{Rails.root}/app/enumerations"
   end
 end

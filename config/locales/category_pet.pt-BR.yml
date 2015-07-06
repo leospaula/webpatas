@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    category_pet:
+      dog: "Cachorro"
+      cat: "Gato"

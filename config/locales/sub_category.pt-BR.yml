@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      sub_category:
+        one: 'Sub-Categoria'
+        other: 'Sub-Categorias'
+    attributes:
+      sub_category:
+        category: 'Categoria'
+        name: 'Nome'

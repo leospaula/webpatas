@@ -18,6 +18,7 @@ gem 'devise', '~> 3.5.1'
 gem 'devise-i18n'
 gem 'activeadmin', github: 'activeadmin'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'enumerate_it', '~> 1.2.8'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'

@@ -1,0 +1,5 @@
+en:
+  enumerations:
+    category_pet:
+      dog: "Dog"
+      cat: "Cat"

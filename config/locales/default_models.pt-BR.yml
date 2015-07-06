@@ -1,0 +1,10 @@
+pt-BR:
+  attributes:
+    created_at: 'Criado em'
+    email: 'Email'
+    name: 'Nome'
+    updated_at: 'Atualizado em'
+  helpers:
+    submit:
+      create: "Criar {{model}}"
+      update: "Atualizar {{model}}"
