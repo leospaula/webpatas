@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
+gem 'rails-i18n', '~> 4.0.3'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -13,6 +14,8 @@ gem 'rails-i18n', '~> 4.0.3'
 gem 'slim-rails', '~> 3.0.1'
 gem 'nprogress-rails'
 gem 'simple_form', '~> 3.0.2'
+gem 'devise'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'
