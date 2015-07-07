@@ -7,11 +7,12 @@
 // # =================================================================
 
 // # ========== Colors
-$orange:    #f9a126;
-$grayLight: #f2f2f2;
-$gray:      #ccc;
-$grayDark:  #999;
-$brown:     #ab7a51;
+$orange:     #f9a126;
+$orangeDark: #EC7000;
+$grayLight:  #f2f2f2;
+$gray:       #ccc;
+$grayDark:   #999;
+$brown:      #ab7a51;
 
 // # ========== Radius
 $radius: 5px;
@@ -33,6 +34,10 @@ $color-gray--form: $gray;
 
 // # ========== Header
 $background-orange--header: $orange;
+
+// # ========== Footer
+$background-orange--footer:     $orange;
+$background-orangeDark--footer: $orangeDark;
 
 // # ========== Filter List
 $color-orange--filterList: $orange;

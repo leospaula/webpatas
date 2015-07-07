@@ -20,15 +20,28 @@ header.Header
   .container
     a.Header-brand.u-imageReplace
       | Webpatas
-    .Header-nav
-      nav
-        ul.Menu
-          li.Menu-item
-            a.Menu-link Sobre
-          li.Menu-item
-            a.Menu-link Lojista
-          li.Menu-item
-            a.Menu-link Contato
+    nav.Header-nav
+      ul.Menu
+        li.Menu-item
+          a.Menu-link Sobre
+        li.Menu-item
+          a.Menu-link Lojista
+        li.Menu-item
+          a.Menu-link Contato
+h2 Footer
+footer.Footer
+  a.Footer-brand.u-imageReplace
+    | Webpatas
+  nav.Footer-social
+    ul
+      li
+        a.Footer-socialIcon = icon('facebook')
+      li
+        a.Footer-socialIcon = icon('twitter')
+      li
+        a.Footer-socialIcon = icon('envelope')
+  span.Footer-copy
+    | Copyright &copy; 2015
 h2 Filter list
 ul.FilterList
   li.FilterList-divider Marcas

@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
 @import "../vendor/sanitize";
 @import "../vendor/typ";
@@ -15,6 +17,7 @@
 @import "components/header";
 @import "components/menu";
 @import "components/filterlist";
+@import "components/footer";
 
 $nprogress-color:  #000;
 @import "nprogress";
