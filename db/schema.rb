@@ -56,6 +56,29 @@ ActiveRecord::Schema.define(version: 20150708173109) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "technical_information"
+    t.string   "brand"
+    t.string   "reference"
+    t.string   "sku"
+    t.string   "image_1"
+    t.string   "image_2"
+    t.string   "image_3"
+    t.string   "image_4"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "products_sub_categories", id: false, force: :cascade do |t|
+    t.integer "product_id",      null: false
+    t.integer "sub_category_id", null: false
+  end
+
+  add_index "products_sub_categories", ["product_id", "sub_category_id"], name: "index_products_sub_categories_on_product_id_and_sub_category_id", using: :btree
+  add_index "products_sub_categories", ["sub_category_id", "product_id"], name: "index_products_sub_categories_on_sub_category_id_and_product_id", using: :btree
+
   create_table "stores", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false

@@ -25,6 +25,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'geo_contrast'
 gem 'geocoder'
+gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'
