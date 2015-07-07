@@ -1,0 +1,26 @@
+pt-BR:
+  activerecord:
+    models:
+      store:
+        one: Loja
+        other: Lojas
+
+    attributes:
+      store:
+        name: Nome
+        email: E-mail
+        password: Senha
+        current_password: Senha atual
+        password_confirmation: Confirmar senha
+        remember_me: Permancer conectado
+        address: Endereço
+        telephone: Telefone
+        website: Site
+        description: Descrição
+        logo: Logo
+        accept_credit_card: Aceita cartão de crédito
+        accept_debit_card: Aceita cartão de débito
+        delivers: Faz tele entrega
+        delivery_hours: Horário da tele entrega
+        business_hours: Horário de funcionamento
+        cnpj: CNPJ
