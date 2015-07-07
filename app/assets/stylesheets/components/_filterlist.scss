@@ -1,0 +1,24 @@
+.FilterList {
+  list-style: none;
+}
+
+.FilterList-divider {
+  color: $color-orange--filterList;
+  font-weight: bold;
+
+  &:not(:first-of-type) {
+    margin-top: 1.0rem;
+  }
+}
+
+.FilterList-item {
+  color: $color-gray--filterList;
+  padding: 0;
+
+  label,
+  input {
+    margin-top: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+}
