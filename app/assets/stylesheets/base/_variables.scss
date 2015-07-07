@@ -20,6 +20,9 @@ $radius: 5px;
 // # ========== Typography
 $fontFamily: 'Montserrat';
 
+// # ========== Mobile
+$mobileBreak: 500px;
+
 // # Components
 // # =================================================================
 
@@ -42,3 +45,10 @@ $background-orangeDark--footer: $orangeDark;
 // # ========== Filter List
 $color-orange--filterList: $orange;
 $color-gray--filterList:   $gray;
+
+// # ========== Card
+$color-orange--card: $orange;
+
+// # ========== Price box
+$color-orange--priceBox: $orange;
+$color-gray--priceBox: $gray;

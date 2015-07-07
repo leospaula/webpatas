@@ -27,3 +27,26 @@
   font-weight: bold;
   padding: 1.1rem;
 }
+
+.Button--neutral {
+  background-color: $grayLight;
+  color: $grayDark;
+}
+
+// # ========== Button sizes
+
+.Button--sm {
+  font-size: 1.0rem;
+  padding: .5rem;
+  text-transform: lowercase;
+}
+
+
+@media (max-width: #{$mobileBreak}) {
+  .Button {
+    width: 100%;
+    padding-top: 1.0rem;
+    padding-bottom: 1.0rem;
+    font-size: 1.6rem;
+  }
+}
