@@ -1,5 +1,17 @@
-h1 Button
-- %w(hero default).each do |color| 
+h1 Webpatas style guide
+
+h2 Button
+- %w(hero default).each do |color|
   button.Button class="Button--#{color}" I'm a button
-  a.Button class="Button--#{color}" I'm a button 
-  input.Button type="submit" class="Button--#{color}" value="I'm a button" 
+  a.Button class="Button--#{color}" I'm a button
+  input.Button type="submit" class="Button--#{color}" value="I'm a button"
+
+h2 Forms
+.gray
+  label Primeiro Nome
+  input type="text" placeholder="ex: Ração para cachorro"
+  label Foto
+  input type="file"
+  label
+    input type="checkbox"
+    | Radio

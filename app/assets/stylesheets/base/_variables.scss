@@ -7,11 +7,11 @@
 // # =================================================================
 
 // # ========== Colors
-$orange: #f9a126;
-$gray:   #f2f2f2;
-$gray:   #ccc;
-$gray:   #999;
-$brown:  #ab7a51;
+$orange:    #f9a126;
+$grayLight: #f2f2f2;
+$gray:      #ccc;
+$grayDark:  #999;
+$brown:     #ab7a51;
 
 // # ========== Radius
 $radius: 5px;
@@ -29,3 +29,4 @@ $background-orangeDark--button:  darken($orange, 20%);
 $borderRadius--button:           .5rem;
 
 // # ========== Forms
+$color-gray--form: $gray;
