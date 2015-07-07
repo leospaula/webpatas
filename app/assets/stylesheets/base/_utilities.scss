@@ -3,3 +3,17 @@
   text-shadow: none;
   color: transparent;
 }
+
+.u-alignVertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.u-pushLeft5 {
+  margin-left: .5rem;
+}
+
+.u-pushRight5 {
+  margin-right: .5rem;
+}

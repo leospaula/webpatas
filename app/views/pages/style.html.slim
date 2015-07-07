@@ -52,24 +52,43 @@ ul.FilterList
         | Pedigree
   li.FilterList-divider Aceita cartão
 h2 Search Result
-.col-md-6
-  article.Card
-    .Card-block
-      .Card-image
-        img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
-    .Card-block
-      h1.Card-title Ração Pedigree Junior Premium - 10kg
-      button.Button.Button--neutral.Button--sm + info
-    .Card-block
-      .Card-info
-        .PriceBox
-          span.PriceBox-text De
-          span.PriceBox-currency R$
-          span.PriceBox-price 3000,20
-        .PriceBox
-          span.PriceBox-text Até
-          span.PriceBox-currency R$
-          span.PriceBox-price 30,20
-          span.PriceBox-shops em 9 lojas
-      .Card-action
-        button.Button Comparar preço
+.container
+  .col-md-8
+    article.Card
+      .Card-block
+        .Card-image
+          img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
+      .Card-block
+        h1.Card-title Ração Pedigree Junior Premium - 10kg
+        button.Button.Button--neutral.Button--sm + info
+      .Card-block
+        .Card-info
+          .PriceBox
+            span.PriceBox-text De
+            span.PriceBox-currency R$
+            span.PriceBox-price 3000,20
+          .PriceBox
+            span.PriceBox-text Até
+            span.PriceBox-currency R$
+            span.PriceBox-price 30,20
+            span.PriceBox-shops em 9 lojas
+        .Card-action
+          button.Button Comparar preço
+h2 Dashboard list
+.container
+  .col-md-8
+    ul.DashboardList
+      - 5.times do
+        li.DashboardList-item
+          .DashboardList-block
+            .DashboardList-img
+              img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
+          .DashboardList-block
+            span.DashboardList-title Ração Pedigree Junior - 10kg
+          .DashboardList-block
+            .DashboardList-price
+              span.PriceBox-text Preço
+              p.PriceBox-price RS 25,20
+          .DashboardList-action.u-alignVertical
+            button.DashboardList-button.Button.u-pushRight5 = icon('pencil')
+            button.DashboardList-button.Button = icon('plus')
