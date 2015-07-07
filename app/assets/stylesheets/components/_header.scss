@@ -1,0 +1,17 @@
+.Header {
+  background-color: $background-orange--header;
+}
+
+.Header-brand {
+  float: left;
+  background-image: asset-url('logo.png');
+  background-size: cover;
+  height: (546px / 6);
+  width: (1713px / 6);
+  cursor: pointer;
+}
+
+.Header-nav {
+  float: right;
+  padding: 33px 0;
+}

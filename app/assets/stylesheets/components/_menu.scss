@@ -1,0 +1,24 @@
+.Menu {
+  list-style: none;
+  margin: 0;
+}
+
+.Menu-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 1.0rem;
+  }
+}
+
+.Menu-link {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
