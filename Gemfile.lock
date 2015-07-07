@@ -294,6 +294,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_editor!
   activeadmin!
+  autoprefixer-rails
   awesome_print (~> 1.6)
   bootstrap-sass (~> 3.3.3)
   carrierwave
