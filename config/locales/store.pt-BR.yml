@@ -9,9 +9,11 @@ pt-BR:
       store:
         name: Nome
         email: E-mail
+        blocked: Bloqueado
         password: Senha
         current_password: Senha atual
         password_confirmation: Confirmar senha
+        confirmed_at: Confirmado em
         remember_me: Permancer conectado
         address: Endereço
         telephone: Telefone

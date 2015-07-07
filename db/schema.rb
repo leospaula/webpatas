@@ -56,17 +56,6 @@ ActiveRecord::Schema.define(version: 20150706183207) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "sub_categories", force: :cascade do |t|
-    t.integer  "category_id"
-    t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id", using: :btree
-
-  add_foreign_key "sub_categories", "categories"
-
   create_table "stores", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -101,4 +90,14 @@ ActiveRecord::Schema.define(version: 20150706183207) do
   add_index "stores", ["email"], name: "index_stores_on_email", unique: true, using: :btree
   add_index "stores", ["reset_password_token"], name: "index_stores_on_reset_password_token", unique: true, using: :btree
 
+  create_table "sub_categories", force: :cascade do |t|
+    t.integer  "category_id"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id", using: :btree
+
+  add_foreign_key "sub_categories", "categories"
 end
