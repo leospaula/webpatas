@@ -125,6 +125,7 @@ GEM
     formtastic_i18n (0.4.1)
     geo_contrast (0.0.4)
       jquery-rails
+    geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     has_scope (0.6.0)
@@ -289,6 +290,7 @@ DEPENDENCIES
   enumerate_it (~> 1.2.8)
   fog
   geo_contrast
+  geocoder
   initjs (~> 2.1.2)
   jbuilder (~> 2.0)
   jquery-rails
