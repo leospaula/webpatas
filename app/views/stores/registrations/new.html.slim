@@ -4,7 +4,7 @@ h2 Sign up
   .form-inputs
     = f.input :email, required: true, autofocus: true
     = f.input :name
-    = f.input :address
+    = f.input :address, input_html: { class: 'geocontrast' }
     = f.input :telephone
     = f.input :website
     = f.input :description
