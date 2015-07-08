@@ -2,7 +2,7 @@ doctype 5
 html
   head
     title = content_for?(:page_title) ? "Webpatas - #{yield(:page_title)}" : "Webpatas"
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag '//maps.googleapis.com/maps/api/js?libraries=places', 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = favicon_link_tag 'favicon.png'
 

@@ -23,6 +23,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'enumerate_it', '~> 1.2.8'
 gem 'carrierwave'
 gem 'fog'
+gem 'geo_contrast'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'
