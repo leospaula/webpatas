@@ -24,8 +24,9 @@ gem 'enumerate_it', '~> 1.2.8'
 gem 'carrierwave'
 gem 'fog'
 gem 'geo_contrast'
-gem 'geocoder'
 gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
+gem 'geocoder', '~> 1.2.9'
+gem 'pundit', '~> 1.0.1'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'

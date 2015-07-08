@@ -193,6 +193,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    pundit (1.0.1)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -301,7 +303,7 @@ DEPENDENCIES
   enumerate_it (~> 1.2.8)
   fog
   geo_contrast
-  geocoder
+  geocoder (~> 1.2.9)
   initjs (~> 2.1.2)
   jbuilder (~> 2.0)
   jquery-rails
@@ -309,6 +311,7 @@ DEPENDENCIES
   nprogress-rails
   pg (~> 0.18.2)
   pry-rails (~> 0.3.2)
+  pundit (~> 1.0.1)
   rails (= 4.2.3)
   rails-i18n (~> 4.0.3)
   sass-rails (~> 5.0)
