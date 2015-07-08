@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      product:
+        one: 'Produto'
+        other: 'Produtos'
+    attributes:
+      product:
+        name: 'Nome'
+        description: 'Descrição'
+        technical_information: 'Informações técnicas'
+        brand: 'Marca'
+        reference: 'Código para produtos similares'
+        sku: 'Código único (SKU/código de barras)'
+        image_1: 'Imagem'
+        image_2: 'Imagem'
+        image_3: 'Imagem'
+        image_4: 'Imagem'
+        sub_categories: 'Tipo de produto'
