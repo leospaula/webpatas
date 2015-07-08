@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require geo_contrast
 //= require webpatas/webpatas.js
 //= require init.js
 //= require_tree .
