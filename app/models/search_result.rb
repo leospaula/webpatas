@@ -41,7 +41,7 @@ class SearchResult
   end
 
   def products
-    @products ||= Product.with_name(query)
+    @products ||= Product.having_items.with_name(query)
   end
 
   def product

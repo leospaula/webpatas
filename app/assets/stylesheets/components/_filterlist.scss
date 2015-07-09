@@ -1,5 +1,30 @@
 .FilterList {
   list-style: none;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+}
+
+.FilterList-header {
+  border-bottom: 1px solid $grayLight;
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.FilterList-body {
+  padding: 20px;
+}
+
+.FilterList-title {
+  font-size: 2.0rem;
+  color: $orange;
+  margin-bottom: 0;
+  font-weight: bold;
+  padding: 20px;
 }
 
 .FilterList-divider {

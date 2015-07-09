@@ -3,6 +3,20 @@
   background-color: #fff;
   padding: 20px;
   width: 100%;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $grayLight;
+  }
+
+  &:first-of-type {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  &:last-of-type {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }
 
 .Card-image {
@@ -30,7 +44,7 @@
 
 .Card-block {
   float: left;
-  width: calc(100% - 150px - 28% - 1.0rem);
+  width: calc(100% - 160px - 28% - 1.0rem);
 
   &:first-of-type {
     width: 150px;

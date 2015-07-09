@@ -1,8 +1,47 @@
-- if @products.results.empty?
-  h1 Nenhum resultado para #{params[:q]}
-- else
-  - @products.object.list_results.each do |result|
-    = link_to result.product.name, product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address])
-    p = "DE #{result.min_price} ATE #{result.max_price}. EM #{result.stores_count} LOJAS"
+main.searchResults
+  .container
+    .searchResults-filter
+      .col-md-3
+        .FilterList-header
+          h2.FilterList-title Filtrar por:
+        ul.FilterList
+          li.FilterList-divider Marcas
+          - 5.times do
+            li.FilterList-item
+              label
+                input type="checkbox"
+                | Pedigree
+          li.FilterList-divider Aceita cartão
+          li.FilterList-item
+            label
+              input type="checkbox"
+              | lorem
+    - if @products.results.empty?
+      h1 Nenhum resultado para #{params[:q]}
+    - else
+      .col-md-9
+        .searchResults-list
+          .searchResults-header
+            h2.searchResults-title Resultado para "#{params[:q]}"
+          - @products.object.list_results.each do |result|
+            article.Card
+              .Card-block
+                .Card-image
+                  = image_tag result.product.image_1.url
+              .Card-block.u-pushLeft10
+                h1 = link_to result.product.name, product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address]), class: 'Card-title'
 
-    hr
+                = link_to ' + info', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address]), class: 'Button Button--neutral Button--sm'
+              .Card-block
+                .Card-info
+                  .PriceBox
+                    span.PriceBox-text De
+                    span.PriceBox-currency R$
+                    span.PriceBox-price = result.min_price
+                  .PriceBox
+                    span.PriceBox-text Até
+                    span.PriceBox-currency R$
+                    span.PriceBox-price = result.max_price
+                    span.PriceBox-shops = "em #{result.stores_count} lojas"
+                .Card-action
+                  = link_to 'Comparar preços', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address]), class: 'Button'
