@@ -24,8 +24,9 @@
 .u-inputInline {
   width: auto !important;
   display: inline-block;
+  vertical-align: middle !important;
 
-  & + & {
+  &:not(:last-child) {
     margin-left: 10px;
   }
 }

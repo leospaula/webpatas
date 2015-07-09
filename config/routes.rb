@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   resources :stores, only: :show
   resources :items
   resources :products, only: %i(index show)
-  root 'searches#show'
+  root 'pages#home'
 
   get 'styleguide', to: 'pages#style'
   get 'pages/dashboard'
+  get 'pages/search'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
