@@ -1,12 +1,14 @@
 header.Header
   .container
-    a.Header-brand.u-imageReplace
-      | Webpatas
+    = link_to 'Webpatas', root_path, class: 'Header-brand u-imageReplace'
     nav.Header-nav
       ul.Menu
         li.Menu-item
           a.Menu-link Sobre
         li.Menu-item
-          a.Menu-link Lojista
+          - if current_store
+            = link_to 'Dashboard', dashboard_path, class: 'Menu-link'
+          - else
+            = link_to 'Lojista', new_store_session_path, class: 'Menu-link'
         li.Menu-item
           a.Menu-link Contato

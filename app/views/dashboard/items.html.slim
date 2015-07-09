@@ -1,0 +1,21 @@
+.container
+  .col-md-4
+    = render 'sidebar'
+  .col-md-8
+    ul.DashboardList
+      - @items.each do |item|
+        li.DashboardList-item
+          .DashboardList-block
+            .DashboardList-img = image_tag item.image_1
+          .DashboardList-block
+            span.DashboardList-title = item.name
+          .DashboardList-block
+            .DashboardList-price
+              span.PriceBox-text Preço
+              p.PriceBox-price = number_to_currency(item.price)
+          .DashboardList-action.u-alignVertical
+            = link_to edit_item_path(item) do
+              button.DashboardList-button.Button.u-pushRight5 = icon('pencil')
+            = link_to item_path(item), method: :delete, data: { confirm: "Deseja excluir esse item?" } do
+              button.DashboardList-button.Button = icon('times')
+      = paginate @items
