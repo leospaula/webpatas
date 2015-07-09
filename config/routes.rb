@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'searches#show'
 
   get 'styleguide', to: 'pages#style'
+  get 'pages/dashboard'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
