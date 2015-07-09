@@ -311,6 +311,7 @@ DEPENDENCIES
   initjs (~> 2.1.2)
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   letter_opener
   nprogress-rails
   pg (~> 0.18.2)

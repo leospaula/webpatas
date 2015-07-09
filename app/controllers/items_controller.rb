@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     @item = Item.new(permitted_params.merge(store: current_store))
     authorize(@item)
     if @item.save
-      redirect_to new_item_path, notice: 'Produto adicionado com sucesso'
+      redirect_to dashboard_items_path, notice: 'Produto adicionado com sucesso'
     else
       flash[:alert] = @item.errors.full_messages.join(', ')
       render :new
@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @product = @item.product
     authorize(@item)
   end
 
@@ -45,7 +46,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize(@item)
     if @item.update_attributes(permitted_params)
-      redirect_to new_item_path, notice: 'Criado com sucesso'
+      redirect_to dashboard_items_path, notice: 'Atualizado com sucesso'
     else
       render :edit
     end
@@ -55,7 +56,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize(@item)
     @item.destroy
-    redirect_to new_item_path
+    redirect_to dashboard_path
   end
 
   private

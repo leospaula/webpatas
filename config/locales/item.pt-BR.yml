@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      item:
+        one: 'Item'
+        other: 'Items'
+    attributes:
+      item:
+        product: 'Produto'
+        store: 'Loja'
+        price: 'Preço'
+        available: 'Disponível'
