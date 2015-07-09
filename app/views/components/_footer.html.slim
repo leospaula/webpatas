@@ -4,10 +4,16 @@ footer.Footer
   nav.Footer-social
     ul
       li
-        a.Footer-socialIcon = icon('facebook')
+        = link_to 'https://www.facebook.com/webpatas', class: 'Footer-socialIcon', target: :blank do
+          = icon('facebook')
       li
-        a.Footer-socialIcon = icon('twitter')
+        = link_to 'https://twitter.com/webpatas', class: 'Footer-socialIcon', target: :blank do
+          = icon('twitter')
       li
-        a.Footer-socialIcon = icon('envelope')
+        = link_to 'https://instagram.com/webpatas', class: 'Footer-socialIcon', target: :blank do
+          = icon('instagram')
+      li
+        = mail_to 'contato@webpatas.com', class: 'Footer-socialIcon' do
+          = icon('envelope')
   span.Footer-copy
     | Copyright &copy; 2015
