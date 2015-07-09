@@ -6,16 +6,20 @@ main.searchResults
           h2.FilterList-title Filtrar por:
         ul.FilterList
           li.FilterList-divider Marcas
-          - 5.times do
+          - @products.object.list_results.map(&:product).map(&:brand).uniq.each do |brand|
             li.FilterList-item
               label
                 input type="checkbox"
-                | Pedigree
+                = brand
           li.FilterList-divider Aceita cartão
           li.FilterList-item
             label
               input type="checkbox"
-              | lorem
+              | Crédito
+          li.FilterList-item
+            label
+              input type="checkbox"
+              | Débito
     - if @products.results.empty?
       h1 Nenhum resultado para #{params[:q]}
     - else
@@ -37,11 +41,11 @@ main.searchResults
                   .PriceBox
                     span.PriceBox-text De
                     span.PriceBox-currency R$
-                    span.PriceBox-price = result.min_price
+                    span.PriceBox-price = number_to_currency(result.min_price, unit: "")
                   .PriceBox
                     span.PriceBox-text Até
                     span.PriceBox-currency R$
-                    span.PriceBox-price = result.max_price
+                    span.PriceBox-price = number_to_currency(result.max_price, unit: "")
                     span.PriceBox-shops = "em #{result.stores_count} lojas"
                 .Card-action
                   = link_to 'Comparar preços', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address]), class: 'Button'
