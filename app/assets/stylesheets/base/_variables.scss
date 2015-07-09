@@ -1,0 +1,59 @@
+// # =================================================================
+// # Variables
+// # =================================================================
+
+
+// # Global
+// # =================================================================
+
+// # ========== Colors
+$orange:     #f9a126;
+$orangeDark: #EC7000;
+$grayLight:  #f2f2f2;
+$gray:       #ccc;
+$grayDark:   #999;
+$brown:      #ab7a51;
+
+// # ========== Radius
+$radius: 5px;
+
+// # ========== Typography
+$fontFamily: 'Montserrat';
+
+// # ========== Mobile
+$mobileBreak: 500px;
+
+// # Components
+// # =================================================================
+
+// # ========== Buttons
+$background-orange--button:      $orange;
+$background-orangeLight--button: lighten($orange, 20%);
+$background-orangeDark--button:  darken($orange, 20%);
+$borderRadius--button:           $radius;
+
+// # ========== Forms
+$color-gray--form:   $gray;
+$borderRadius--form: $radius;
+
+// # ========== Header
+$background-orange--header: $orange;
+
+// # ========== Footer
+$background-orange--footer:     $orange;
+$background-orangeDark--footer: $orangeDark;
+
+// # ========== Filter List
+$color-orange--filterList: $orange;
+$color-gray--filterList:   $gray;
+
+// # ========== Card
+$color-orange--card: $orange;
+
+// # ========== Price box
+$color-orange--priceBox: $orange;
+$color-gray--priceBox: $gray;
+
+// # ========== Dashboard list
+$color-orange--dashboardList: $orange;
+$borderColor-grayLight--dashboardList: $grayLight;

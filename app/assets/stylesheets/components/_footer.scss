@@ -1,0 +1,46 @@
+.Footer {
+  background-color: $background-orange--footer;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.Footer-brand {
+  display: inline-block;
+  background-image: asset-url('logo.png');
+  background-size: cover;
+  height: (88px / 2);
+  width: (357px / 2);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.Footer-copy {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.Footer-social {
+  li {
+    display: inline-block;
+  }
+}
+
+.Footer-socialIcon {
+  display: block;
+  background-color: $background-orangeDark--footer;
+  padding-top: 5px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fff;
+    color: $background-orange--footer;
+  }
+}

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :products, only: %i(index show)
   root 'searches#show'
 
+  get 'styleguide', to: 'pages#style'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 end

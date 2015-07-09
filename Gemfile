@@ -27,6 +27,8 @@ gem 'geo_contrast'
 gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
 gem 'geocoder', '~> 1.2.9'
 gem 'pundit', '~> 1.0.1'
+gem "autoprefixer-rails"
+gem 'font-awesome-sass', '~> 4.3.0'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'

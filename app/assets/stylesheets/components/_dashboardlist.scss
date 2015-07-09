@@ -1,0 +1,85 @@
+.DashboardList {
+  @extend .clearfix;
+  list-style: none;
+  width: 100%;
+  background-color: #fff;
+}
+
+.DashboardList-item {
+  padding: 20px;
+  position: relative;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $borderColor-grayLight--dashboardList;
+  }
+}
+
+.DashboardList-block {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: calc(100% - 300px);
+
+  &:first-of-type {
+    width: 80px;
+  }
+
+  &:nth-of-type(3) {
+    width: 120px;
+  }
+}
+
+.DashboardList-title {
+  font-size: 2.4rem;
+  color: $color-orange--dashboardList;
+}
+
+.DashboardList-img {
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.DashboardList-price {
+  text-align: center;
+}
+
+.DashboardList-action {
+  position: absolute;
+  right: 20px;
+}
+
+@media (max-width: #{$mobileBreak}) {
+  .DashboardList-block {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .DashboardList-img {
+    margin: 0 auto;
+  }
+
+  .DashboardList-item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .DashboardList-action {
+    position: static;
+    transform: translateY(0);
+    margin-top: 10px;
+  }
+
+  .DashboardList-button {
+    width: 49%;
+    float: left;
+  }
+}

@@ -1,0 +1,94 @@
+h1 Webpatas style guide
+
+h2 Button
+- %w(hero default).each do |color|
+  button.Button class="Button--#{color}" I'm a button
+  a.Button class="Button--#{color}" I'm a button
+  input.Button type="submit" class="Button--#{color}" value="I'm a button"
+
+h2 Forms
+.gray
+  label Primeiro Nome
+  input type="text" placeholder="ex: Ração para cachorro"
+  label Foto
+  input type="file"
+  label
+    input type="checkbox"
+    | Radio
+h2 Header
+header.Header
+  .container
+    a.Header-brand.u-imageReplace
+      | Webpatas
+    nav.Header-nav
+      ul.Menu
+        li.Menu-item
+          a.Menu-link Sobre
+        li.Menu-item
+          a.Menu-link Lojista
+        li.Menu-item
+          a.Menu-link Contato
+h2 Footer
+footer.Footer
+  a.Footer-brand.u-imageReplace
+    | Webpatas
+  nav.Footer-social
+    ul
+      li
+        a.Footer-socialIcon = icon('facebook')
+      li
+        a.Footer-socialIcon = icon('twitter')
+      li
+        a.Footer-socialIcon = icon('envelope')
+  span.Footer-copy
+    | Copyright &copy; 2015
+h2 Filter list
+ul.FilterList
+  li.FilterList-divider Marcas
+  - 5.times do
+    li.FilterList-item
+      label
+        input type="checkbox"
+        | Pedigree
+  li.FilterList-divider Aceita cartão
+h2 Search Result
+.container
+  .col-md-8
+    article.Card
+      .Card-block
+        .Card-image
+          img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
+      .Card-block
+        h1.Card-title Ração Pedigree Junior Premium - 10kg
+        button.Button.Button--neutral.Button--sm + info
+      .Card-block
+        .Card-info
+          .PriceBox
+            span.PriceBox-text De
+            span.PriceBox-currency R$
+            span.PriceBox-price 3000,20
+          .PriceBox
+            span.PriceBox-text Até
+            span.PriceBox-currency R$
+            span.PriceBox-price 30,20
+            span.PriceBox-shops em 9 lojas
+        .Card-action
+          button.Button Comparar preço
+h2 Dashboard list
+.container
+  .col-md-8
+    ul.DashboardList
+      - 5.times do
+        li.DashboardList-item
+          .DashboardList-block
+            .DashboardList-img
+              img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
+          .DashboardList-block
+            span.DashboardList-title Ração Pedigree Junior - 10kg
+          .DashboardList-block
+            .DashboardList-price
+              span.PriceBox-text Preço
+              p.PriceBox-price RS 25,20
+          .DashboardList-action.u-alignVertical
+            button.DashboardList-button.Button.u-pushRight5 = icon('pencil')
+            button.DashboardList-button.Button = icon('plus')

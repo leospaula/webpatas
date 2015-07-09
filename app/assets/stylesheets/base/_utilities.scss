@@ -1,0 +1,37 @@
+.u-imageReplace {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+.u-alignVertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@for $value from 5 through ceil(100) {
+  .u-pushLeft#{$value} {
+    margin-left: #{$value}px;
+  }
+
+  .u-pushRight#{$value} {
+    margin-right: #{$value}px;
+  }
+}
+
+
+.u-inputInline {
+  width: auto !important;
+  display: inline-block;
+
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+.u-colCentered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}

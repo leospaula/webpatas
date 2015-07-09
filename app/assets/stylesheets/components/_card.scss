@@ -1,0 +1,65 @@
+.Card {
+  @extend .clearfix;
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+}
+
+.Card-image {
+  width: 150px;
+  height: 150px;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.Card-title {
+  color: $color-orange--card;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.Card-action {
+  margin-top: 20px;
+}
+
+.Card-block {
+  float: left;
+  width: calc(100% - 150px - 28% - 1.0rem);
+
+  &:first-of-type {
+    width: 150px;
+  }
+
+  &:last-of-type {
+    float: right;
+    width: 28%;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: #{$mobileBreak}) {
+  .Card-image {
+    margin: 0 auto;
+  }
+
+  .Card-title {
+    text-align: center;
+  }
+
+  .Card-info {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .Card-block {
+    float: none !important; // ovewrite pseudo selectors
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}

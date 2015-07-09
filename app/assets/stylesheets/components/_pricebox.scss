@@ -1,0 +1,24 @@
+.PriceBox-text {
+  color: $color-gray--priceBox;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+.PriceBox-currency {
+  color: $color-orange--priceBox;
+  margin-right: 5px;
+  font-size: 1.4rem;
+}
+
+.PriceBox-price {
+  color: $color-orange--priceBox;
+  font-size: 2.0rem;
+  margin-bottom: 0;
+}
+
+.PriceBox-shops {
+  display: block;
+  color: $color-gray--priceBox;
+  font-size: 1.4rem;
+}
