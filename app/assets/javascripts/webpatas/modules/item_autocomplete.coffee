@@ -16,7 +16,13 @@ Webpatas.ItemAutocomplete =
       }
     })
 
-    $('#remote .typeahead').typeahead(null, {
+    $('#remote .typeahead').typeahead({
+      classNames: {
+        menu: 'Autocomplete-menu',
+        suggestion: 'Autocomplete-suggestion',
+        cursor: 'Autocomplete-cursor'
+      }
+      }, {
       name: 'best-pictures',
       display: 'value',
       source: items
