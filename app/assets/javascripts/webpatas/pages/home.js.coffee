@@ -1,6 +1,6 @@
-Webpatas.Searches ?= {}
+Webpatas.Pages ?= {}
 
-Webpatas.Searches.Show =
+Webpatas.Pages.Home =
   init: ->
 
   modules: -> [
