@@ -56,6 +56,18 @@ ActiveRecord::Schema.define(version: 20150708173109) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "items", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "store_id"
+    t.boolean  "available"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "items", ["product_id"], name: "index_items_on_product_id", using: :btree
+  add_index "items", ["store_id"], name: "index_items_on_store_id", using: :btree
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -78,6 +90,17 @@ ActiveRecord::Schema.define(version: 20150708173109) do
 
   add_index "products_sub_categories", ["product_id", "sub_category_id"], name: "index_products_sub_categories_on_product_id_and_sub_category_id", using: :btree
   add_index "products_sub_categories", ["sub_category_id", "product_id"], name: "index_products_sub_categories_on_sub_category_id_and_product_id", using: :btree
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "query"
+    t.boolean  "autocomplete", default: false
+    t.inet     "ip"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "stores", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -124,5 +147,7 @@ ActiveRecord::Schema.define(version: 20150708173109) do
 
   add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id", using: :btree
 
+  add_foreign_key "items", "products"
+  add_foreign_key "items", "stores"
   add_foreign_key "sub_categories", "categories"
 end

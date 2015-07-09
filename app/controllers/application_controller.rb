@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pundit
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -18,5 +20,12 @@ class ApplicationController < ActionController::Base
                                                 :accept_debit_card, :delivers,
                                                 :delivery_hours, :business_hours,
                                                 :cnpj]
+
+  end
+
+  private
+
+  def pundit_user
+    current_store
   end
 end

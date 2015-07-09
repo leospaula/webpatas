@@ -1,0 +1,8 @@
+- if @products.results.empty?
+  h1 Nenhum resultado para #{params[:q]}
+- else
+  - @products.object.list_results.each do |result|
+    = link_to result.product.name, product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address])
+    p = "DE #{result.min_price} ATE #{result.max_price}. EM #{result.stores_count} LOJAS"
+
+    hr
