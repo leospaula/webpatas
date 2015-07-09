@@ -1,0 +1,13 @@
+- if @product.persisted? || @item.persisted?
+  = simple_form_for @item do |f|
+    = image_tag @item.product.image_1.url
+    p = @item.name
+    = f.input :product_id, as: :hidden
+    = f.input :price
+    = f.input :available
+    = f.submit
+- else
+  = simple_form_for @item, url: new_item_path, method: :get do |f|
+    #remote
+      input.typeahead[type="text" placeholder="Produto" style="width: 100%"]
+      input#autocomplete-result[type="hidden" name="product_id"]

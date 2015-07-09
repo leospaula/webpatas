@@ -21,6 +21,8 @@ class ApplicationController < ActionController::Base
                                                 :delivery_hours, :business_hours,
                                                 :cnpj]
 
+  end
+
   private
 
   def pundit_user

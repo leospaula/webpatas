@@ -6,5 +6,5 @@ pt-BR:
     updated_at: 'Atualizado em'
   helpers:
     submit:
-      create: "Criar {{model}}"
-      update: "Atualizar {{model}}"
+      create: "Criar %{model}"
+      update: "Atualizar %{model}"
