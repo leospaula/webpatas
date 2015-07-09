@@ -1,0 +1,73 @@
+// # =================================================================
+// # Hero Section
+// # =================================================================
+
+// # Hero generic classes
+// # =================================================================
+.hero {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.hero-title {
+  font-weight: bold;
+  color: $orange;
+  margin-bottom: .5rem;
+}
+
+.hero-description {
+  font-size: 1.8rem;
+  color: $grayDark;
+}
+
+.hero-boxes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// # Card
+// # =================================================================
+.heroCard {
+  display: table;
+  height: calc(100% - 84px);
+  background-image: asset-url('dog.jpg');
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  width: 100%;
+}
+
+.heroCard-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.heroCard-title {
+  font-size: 5.0rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.heroCard-description {
+  color: #fff;
+  font-size: 2.1rem;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroCard-search {
+  margin-bottom: 20px;
+}
+
+.heroCard-searchDescription {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+// # About
+// # =================================================================
+.heroShop {
+  background: $grayLight;
+}

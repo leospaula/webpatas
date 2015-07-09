@@ -22,9 +22,10 @@
 @import "components/card";
 @import "components/pricebox";
 @import "components/dashboardlist";
+@import "components/boxes";
 
 // # ========== Combos
-@import "combos/heroCard";
+@import "combos/hero";
 
 $nprogress-color:  #000;
 @import "nprogress";
