@@ -10,10 +10,22 @@
   transform: translateY(-50%);
 }
 
-.u-pushLeft5 {
-  margin-left: .5rem;
+@for $value from 5 through ceil(100) {
+  .u-pushLeft#{$value} {
+    margin-left: #{$value}px;
+  }
+
+  .u-pushRight#{$value} {
+    margin-right: #{$value}px;
+  }
 }
 
-.u-pushRight5 {
-  margin-right: .5rem;
+
+.u-inputInline {
+  width: auto !important;
+  display: inline-block;
+
+  & + & {
+    margin-left: 1rem;
+  }
 }

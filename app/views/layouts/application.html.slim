@@ -10,4 +10,6 @@ html
   body class="#{params[:controller]} #{params[:action]}"
     = initjs_tag "Webpatas"
     = render 'layouts/flash' if flash.any?
+    = ui_component 'header'
     = yield
+    = ui_component 'footer'
