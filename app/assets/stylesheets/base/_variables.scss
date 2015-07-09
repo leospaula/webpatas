@@ -30,10 +30,11 @@ $mobileBreak: 500px;
 $background-orange--button:      $orange;
 $background-orangeLight--button: lighten($orange, 20%);
 $background-orangeDark--button:  darken($orange, 20%);
-$borderRadius--button:           .5rem;
+$borderRadius--button:           $radius;
 
 // # ========== Forms
-$color-gray--form: $gray;
+$color-gray--form:   $gray;
+$borderRadius--form: $radius;
 
 // # ========== Header
 $background-orange--header: $orange;

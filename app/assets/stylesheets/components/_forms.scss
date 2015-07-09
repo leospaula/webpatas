@@ -16,8 +16,8 @@ input[type="file"],
 textarea {
   border: 0;
   background-color: #fff;
-  border-radius: 5px;
-  padding: 1rem;
+  border-radius: $borderRadius--form;
+  padding: 10px;
   display: inline-block;
   width: 100%;
 
@@ -30,6 +30,6 @@ textarea {
 input[type="checkbox"],
 input[type="radio"] {
   transform: translateY(.4em);
-  margin-right: .5rem;
+  margin-right: 5px;
   cursor: pointer;
 }
