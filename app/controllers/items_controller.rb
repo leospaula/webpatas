@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_store!, except: %i(index show)
   after_action :verify_authorized, except: %i(index show)
 
   def index
