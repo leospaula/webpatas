@@ -15,8 +15,10 @@ window.Webpatas =
 
   init: ->
     # Something here. This is called in every page.
-    $('.geocontrast').geoContrast({format: "formatted"});
-    $('.geocontrast')[0].append_coords();
+    geoContrast = $('.geocontrast')
+    if geoContrast.length
+      geoContrast.geoContrast(format: 'formatted')
+      geoContrast[0].append_coords()
 
   modules: -> []
     # Some modules that will be used on every page.
