@@ -1,10 +1,18 @@
-h2
-  | Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, "Log in"
-= render "stores/shared/links"
+main.gray.u-panelPadding
+  .container
+    .col-md-6.u-colCentered
+      .BoxForm.BoxForm--padding
+        .BoxForm-head
+          h2.BoxForm-title Log in
+        .BoxForm-body
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .form-inputs
+            .form-group
+              = f.input :email, required: false, autofocus: true
+            .form-group
+              = f.input :password, required: false
+
+            = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+          .BoxForm-action
+            = f.button :submit, "Log in", class: 'Button Button--block'
+        = render "stores/shared/links"

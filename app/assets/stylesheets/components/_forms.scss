@@ -33,3 +33,12 @@ input[type="radio"] {
   margin-right: 5px;
   cursor: pointer;
 }
+
+.label,
+.checkbox {
+  margin-left: 20px;
+
+  input {
+    position: static !important;
+  }
+}

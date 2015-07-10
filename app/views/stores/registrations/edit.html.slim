@@ -1,35 +1,55 @@
 main.gray
-  .container.dashboard
-    = render 'dashboard/sidebar'
+  .container
+    .col-md-3
+      .u-panelPadding
+        = render 'dashboard/sidebar'
     .col-md-9
-      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-        = f.error_notification
-        .form-inputs
-          = f.input :email, required: true, autofocus: true
-          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-            p
-              | Currently waiting confirmation for:
-              = resource.unconfirmed_email
-          = f.input :name
-          = f.input :address, input_html: { class: 'geocontrast' }
-          = f.input :telephone
-          = f.input :website
-          = f.input :description
-          = f.input :logo
-          = f.input :accept_credit_card
-          = f.input :accept_debit_card
-          = f.input :delivers
-          = f.input :delivery_hours
-          = f.input :business_hours
-          = f.input :cnpj
-          = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
-          = f.input :password_confirmation, required: false
-          = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
-        .form-actions
-          = f.button :submit, "Update"
-      h3
-        | Cancel my account
-      p
-        | Unhappy?
-        = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-      = link_to "Back", :back
+      .col-md-9.u-colCentered
+        .BoxForm.u-panelPadding
+          .BoxForm-head
+            h2.BoxForm-title Sign up
+          .BoxForm-body
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+              = f.error_notification
+              .form-inputs
+                .form-group
+                = f.input :email, required: true, autofocus: true
+                .form-group
+                - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                  p
+                    | Currently waiting confirmation for:
+                    = resource.unconfirmed_email
+                .form-group
+                  = f.input :name
+                .form-group
+                  = f.input :address, input_html: { class: 'geocontrast' }
+                .form-group
+                  = f.input :telephone
+                .form-group
+                  = f.input :website
+                .form-group
+                  = f.input :description
+                .form-group
+                  = f.input :logo
+                .form-group
+                  = f.input :accept_credit_card
+                .form-group
+                  = f.input :accept_debit_card
+                .form-group
+                  = f.input :delivers
+                .form-group
+                  = f.input :delivery_hours
+                .form-group
+                  = f.input :business_hours
+                .form-group
+                  = f.input :cnpj
+                .form-group
+                  = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
+                .form-group
+                  = f.input :password_confirmation, required: false
+                .form-group
+                  = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+              .BoxForm-action
+                = f.button :submit, "Atualizar", class: 'Button Button--block'
+            h5.pull-left Cancelar minha conta
+            = link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'pull-right Button Button--sm Button--neutral'

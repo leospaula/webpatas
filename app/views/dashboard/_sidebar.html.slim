@@ -1,12 +1,11 @@
 aside.dashboard-menu
-  .col-md-3
-    nav
-      ul.MenuList
-        li.MenuList-item
-          = link_to 'Meus Produtos', dashboard_items_path, class: 'MenuList-link'
-        li.divider
-        li.MenuList-item
-          = link_to 'Editar Minha Loja', edit_store_registration_path, class: 'MenuList-link'
-        li.divider
-        li.MenuList-item
-          = link_to 'Minha Loja', store_path(current_store), class: 'MenuList-link'
+  nav
+    ul.MenuList
+      li.MenuList-item
+        = link_to 'Meus Produtos', dashboard_items_path, class: 'MenuList-link'
+      li.divider
+      li.MenuList-item
+        = link_to 'Editar Minha Loja', edit_store_registration_path, class: 'MenuList-link'
+      li.divider
+      li.MenuList-item
+        = link_to 'Minha Loja', store_path(current_store), class: 'MenuList-link'
