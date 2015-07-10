@@ -2,22 +2,22 @@ main.gray
   .container
     .BackButton
       a.Button Voltar
-    .productProfile
+    .profile
       .row
         .col-md-3
-          .productProfile-img
+          .profile-img
             .Galeria
               - %i(image_1 image_2 image_3 image_4).each do |image|
                 = image_tag @product.send(image).url if @product.send("#{image}?")
         .col-md-9
-          .productProfile-info
-            h1.productProfile-title = @product.name
+          .profile-info
+            h1.profile-title = @product.name
             span.Label = @product.brand
-            p.productProfile-price
+            p.profile-price
               | A partir de
-              span.productProfile-currency  R$ 30,20
+              span.profile-currency  R$ 30,20
               |  em 9 lojas
-            span.productProfile-details Detalhes
+            span.profile-details Detalhes
             p == @product.description
   .container
     .row

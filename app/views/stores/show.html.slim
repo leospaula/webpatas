@@ -1,4 +1,77 @@
-h1 Stores#show
-p Find me in app/views/stores/show.html.slim
+main.gray
+  .container
+    .BackButton
+      a.Button Voltar
+    .profile
+      .row
+        .profile-maps
+          .col-md-12
+            iframe[width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?q=#{@store.address}&output=embed"]
 
-iframe[width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?q=#{@store.address}&output=embed"]
+      .row
+        .col-md-4
+          .profile-img
+            .Galeria
+              = image_tag @store.logo
+        .col-md-8
+          .profile-info
+            h1.profile-title = @store.name
+            span = @store.address
+            span = @store.website
+            .profile-billingInfo
+              .profile-infoList
+                span.PriceBox-text.PriceBox-text--sm Telefone
+                p.PriceBox-text.u-textOrange = @store.telephone
+              .profile-infoList
+                span.PriceBox-text.PriceBox-text--sm Entrega
+                p.PriceBox-text.u-textOrange = @store.delivers ? "Tele-entrega" : "Não"
+              .profile-infoList
+                span.PriceBox-text.PriceBox-text--sm Cartão
+                p.PriceBox-text.u-textOrange
+                  - if !@store.accept_debit_card && !@store.accept_credit_card
+                    = "Não"
+                  - else
+                    = "Débito" if @store.accept_debit_card
+                    = "Crédito" if @store.accept_credit_card
+
+            span.profile-details Horário de atendimento
+            p.profile-detailsDesc = @store.business_hours
+            span.profile-details Horário de entrega
+            p.profile-detailsDesc = @store.delivery_hours
+            span.profile-details Sobre
+            p.profile-detailsDesc == @store.description
+  .container
+    .row
+      .col-md-12
+        ul.StoreList
+          - @store.items.each do |item|
+            li.StoreList-item
+              .StoreList-block
+                .StoreList-img
+                  = image_tag item.image_1, class: 'u-alignVertical'
+              .StoreList-block
+                span.StoreList-title = item.name
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text Preço
+                  p.PriceBox-price = number_to_currency(item.price)
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text.PriceBox-text--sm Entrega
+                  p.PriceBox-text.u-textOrange = item.store.delivers ? "Tele-entrega" : "Não"
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text.PriceBox-text--sm Cartão
+                  p.PriceBox-text.u-textOrange
+                    - if !item.store.accept_debit_card && !item.store.accept_credit_card
+                      = "Não"
+                    - else
+                      = "Débito" if item.store.accept_debit_card
+                      = "Crédito" if item.store.accept_credit_card
+              .StoreList-action.u-alignVertical
+                span.Button
+                  = @store.telephone
+                  div Tele-vendas
+
+
+
