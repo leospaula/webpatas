@@ -10,13 +10,10 @@ class Product < ActiveRecord::Base
     products = all
     store_filters = filters.slice(:accept_credit_card, :accept_debit_card, :delivers)
     if store_filters.any?
-      #products = joins(items: [:store]).where(items: { store: store_filters } )
-      #joins(items: :store).where(items: {store: Store.where(store_filters)})
       products = joins(items: :store).merge(Store.where(store_filters))
     end
     filters = filters.except(*store_filters.keys)
-    products = products.where(filters) if filters.any?
-    products.distinct
+    products.tap { |collection| collection.where(filters) if filters.any? }.distinct
   end
 
   (1..4).each do |i|
