@@ -20,10 +20,68 @@ if Rails.env.development? || ENV['RUN_SEED']
                             brand: 'Royal', sku: '00002', remote_image_1_url: 'http://theoldreader.com/kittens/600/400/' )
   sub_category.products << product3
 
+  # Store with credit card + debit + deliver
+
   store = Store.create!(email: 'contato@codeland.com.br', password: '123123123',
                         name: 'Loja', telephone: '(51) 3779-9710',
+                        accept_credit_card: true, accept_debit_card: true,
+                        delivers: true, delivery_hours: 'Horários',
                         address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
                         cnpj: '20.628.338/0001-08', business_hours: 'Hora')
+  store.confirm
+
+  item = Item.create!(product: product, available: true, price: 10.00, store: store)
+  item = Item.create!(product: product, available: true, price: 15.00, store: store)
+  item = Item.create!(product: product, available: true, price: 20.00, store: store)
+
+  item = Item.create!(product: product2, available: true, price: 20.00, store: store)
+  item = Item.create!(product: product2, available: true, price: 10.00, store: store)
+  item = Item.create!(product: product2, available: true, price: 15.00, store: store)
+
+  # Store with deliver but without cards
+
+  store = Store.create!(email: 'contato2@codeland.com.br', password: '123123123',
+                        name: 'Loja2', telephone: '(51) 3779-9710',
+                        accept_credit_card: false, accept_debit_card: false,
+                        delivers: true, delivery_hours: 'Horários',
+                        address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
+                        cnpj: '20.628.338/0002-08', business_hours: 'Hora')
+  store.confirm
+
+  item = Item.create!(product: product, available: true, price: 10.00, store: store)
+  item = Item.create!(product: product, available: true, price: 15.00, store: store)
+  item = Item.create!(product: product, available: true, price: 20.00, store: store)
+
+  item = Item.create!(product: product2, available: true, price: 20.00, store: store)
+  item = Item.create!(product: product2, available: true, price: 10.00, store: store)
+  item = Item.create!(product: product2, available: true, price: 15.00, store: store)
+
+  # Store with deliver+credit but without debit
+
+  store = Store.create!(email: 'contato3@codeland.com.br', password: '123123123',
+                        name: 'Loja 3', telephone: '(51) 3779-9710',
+                        accept_credit_card: true, accept_debit_card: false,
+                        delivers: true, delivery_hours: 'Horários',
+                        address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
+                        cnpj: '20.628.338/0003-08', business_hours: 'Hora')
+  store.confirm
+
+  item = Item.create!(product: product, available: true, price: 10.00, store: store)
+  item = Item.create!(product: product, available: true, price: 15.00, store: store)
+  item = Item.create!(product: product, available: true, price: 20.00, store: store)
+
+  item = Item.create!(product: product2, available: true, price: 20.00, store: store)
+  item = Item.create!(product: product2, available: true, price: 10.00, store: store)
+  item = Item.create!(product: product2, available: true, price: 15.00, store: store)
+
+  # Store with deliver+debit but without credit
+
+  store = Store.create!(email: 'contato4@codeland.com.br', password: '123123123',
+                        name: 'Loja 4', telephone: '(51) 3779-9710',
+                        accept_credit_card: false, accept_debit_card: false,
+                        delivers: false,
+                        address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
+                        cnpj: '20.628.338/0002-08', business_hours: 'Hora')
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)

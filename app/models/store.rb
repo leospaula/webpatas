@@ -14,8 +14,7 @@ class Store < ActiveRecord::Base
 
   validates :delivery_hours, presence: true, if: :delivers?
 
-  private
-  def delivers?
-    delivers
+  def accept_card?
+    accept_credit_card? || accept_debit_card?
   end
 end

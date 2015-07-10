@@ -1,18 +1,25 @@
 class SearchResult
   attr_accessor :address, :address_formatted, :latitude, :longitude, :q, :ip,
-    :product_id, :direct
+    :product_id, :direct, :brand, :credit, :debit, :delivers
   alias_method :query, :q
 
   def initialize(params, ip)
-    attrs = %i(address address_formatted latitude longitude q product_id direct)
+    attrs = %i(address address_formatted latitude longitude q product_id direct
+               brand credit debit delivers)
     params.slice(*attrs).each do |attr, value|
       send("#{attr}=", value)
     end
     self.ip = ip
   end
 
-  def direct?
-    ActiveRecord::ConnectionAdapters::Column::TRUE_VALUES.include?(direct)
+  %i(direct credit debit delivers).each do |attr|
+    define_method("#{attr}?") do
+      ActiveRecord::ConnectionAdapters::Column::TRUE_VALUES.include?(send(attr))
+    end
+  end
+
+  def brand?
+    brand.present? && brand.any?
   end
 
   def valid?
@@ -36,12 +43,21 @@ class SearchResult
     end
   end
 
-  def items
-    @items ||= product.items.scoped_near(latitude, longitude).reorder(price: :asc)
+  def items(the_product = product)
+    @items ||= the_product.items.scoped_near(latitude, longitude).with_store_filters(filters).reorder(price: :asc)
   end
 
   def products
-    @products ||= Product.having_items.with_name(query)
+    @products ||= Product.having_items.with_name(query).with_filters(filters)
+  end
+
+  def filters
+    {}.tap do |filters|
+      filters[:brand] = brand if brand.present?
+      filters[:accept_credit_card] = true if credit?
+      filters[:accept_debit_card] = true if debit?
+      filters[:delivers] = true if delivers?
+    end
   end
 
   def product
@@ -57,7 +73,7 @@ class SearchResult
 
   def list_results
     products.map do |product|
-      items = product.items.scoped_near(latitude, longitude)
+      items = items(product)
       ListProduct.new(items.minimum(:price), items.maximum(:price), items.count, product)
     end
   end

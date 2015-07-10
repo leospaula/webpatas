@@ -4,7 +4,7 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def new?
-    record.store == user
+    user && record.store == user
   end
 
   def create?
@@ -12,7 +12,7 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.store == user
+    user && record.store == user
   end
 
   def update?
