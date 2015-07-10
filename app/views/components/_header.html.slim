@@ -4,11 +4,11 @@ header.Header
     nav.Header-nav
       ul.Menu
         li.Menu-item
-          a.Menu-link Sobre
+          = link_to 'Sobre', about_path, class: 'Menu-link'
         li.Menu-item
           - if current_store
             = link_to 'Dashboard', dashboard_path, class: 'Menu-link'
           - else
             = link_to 'Lojista', new_store_session_path, class: 'Menu-link'
         li.Menu-item
-          a.Menu-link Contato
+          = link_to 'Contato', contact_path, class: 'Menu-link'
