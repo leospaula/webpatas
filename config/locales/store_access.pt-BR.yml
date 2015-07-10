@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      store_access:
+        one: Acesso da loja
+        other: Acessos das lojas
+
+    attributes:
+      store_access:
+        store: Loja
+        ip: Endereço de Ip
