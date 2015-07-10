@@ -5,9 +5,14 @@ section.heroCard
     p.heroCard-description
       | Encontre produtos e medicamentos para cães e gatos próximos de você
     .heroCard-search
-      input.u-inputInline placeholder="ex: Ração para filhotes" type="text"
-      input.u-inputInline placeholder="Endereço, CEP..." type="text"
-      button.Button.Button--hero.u-pushLeft10 Buscar
+      = form_tag search_path, method: :get
+        #remote
+          input.typeahead.u-inputInline[type="text" name="q" placeholder="O que você procura?" value="#{@product.try(:name)}"]
+
+          input#autocomplete-result[type="hidden" name="product_id" style="vertical-align: middle;" value="#{@product.try(:id)}"]
+          input#autocomplete-result-type[type="hidden" name="direct" value="#{@product ? 't' : 'f'}"]
+          input.u-inputInline.geocontrast[type="text" name="address"]
+          input.Button.u-pushLeft10[type="submit" value="Buscar"]
     p.heroCard-searchDescription
       | Estamos em fase beta disponível apenas no Rio de Janeiro - RJ
 section.hero.heroAbout

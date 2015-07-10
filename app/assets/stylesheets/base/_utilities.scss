@@ -20,12 +20,12 @@
   }
 }
 
-
 .u-inputInline {
   width: auto !important;
   display: inline-block;
+  vertical-align: middle !important;
 
-  & + & {
+  &:not(:last-child) {
     margin-left: 10px;
   }
 }
@@ -34,4 +34,8 @@
   float: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+.u-textOrange {
+  color: $orange !important;
 }

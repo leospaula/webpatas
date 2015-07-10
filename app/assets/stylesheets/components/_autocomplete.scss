@@ -1,0 +1,26 @@
+
+.Autocomplete-menu {
+  left: 15px !important;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+  border-radius: 5px;
+}
+
+.Autocomplete-suggestion {
+  background-color: #fff;
+  padding: 5px 10px;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $grayLight;
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.Autocomplete-cursor {
+  background-color: $orange;
+  color: #fff;
+  transition: all .1s;
+}

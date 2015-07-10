@@ -23,9 +23,18 @@
 @import "components/pricebox";
 @import "components/dashboardlist";
 @import "components/boxes";
+@import "components/menulist";
+@import "components/autocomplete";
+@import "components/label";
+@import "components/galeria";
+@import "components/storelist";
+@import "components/backbutton";
 
 // # ========== Combos
 @import "combos/hero";
+@import "combos/dashboard";
+@import "combos/search";
+@import "combos/store";
 
 $nprogress-color:  #000;
 @import "nprogress";
