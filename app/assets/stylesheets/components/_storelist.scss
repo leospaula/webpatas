@@ -1,0 +1,109 @@
+.StoreList {
+  @extend .clearfix;
+  list-style: none;
+  width: 100%;
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+// # ========== Header
+.StoreList-header {
+  padding: 20px;
+  border-bottom: 1px solid $grayLight;
+}
+
+.StoreList-Headertitle {
+  margin-bottom: 0;
+  padding-top: 8px;
+  font-size: 2.4rem;
+  color: $orange;
+}
+
+
+// # ========== Normal itens
+.StoreList-item {
+  padding: 20px;
+  position: relative;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $grayLight;
+  }
+}
+
+.StoreList-block {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: calc(100% - 700px);
+
+  &:first-of-type {
+    width: 80px;
+  }
+
+  &:not(:nth-of-type(2)) {
+    width: 120px;
+  }
+
+  &:nth-of-type(3) {
+    width: 180px;
+  }
+}
+
+.StoreList-title {
+  font-size: 2.4rem;
+  color: $orange;
+}
+
+.StoreList-img {
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.StoreList-action {
+  position: absolute;
+  right: 20px;
+}
+
+@media (max-width: 990px) {
+  .StoreList-block {
+    width: 100%;
+  }
+
+  .StoreList-action {
+    position: static;
+    transform: translate(0);
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: #{$mobileBreak}) {
+  .StoreList-block {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .StoreList-img {
+    margin: 0 auto;
+  }
+
+  .StoreList-item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .StoreList-action {
+    position: static;
+    transform: translateY(0);
+    margin-top: 10px;
+  }
+}

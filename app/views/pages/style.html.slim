@@ -92,3 +92,27 @@ h2 Dashboard list
           .DashboardList-action.u-alignVertical
             button.DashboardList-button.Button.u-pushRight5 = icon('pencil')
             button.DashboardList-button.Button = icon('plus')
+h2 Store list
+.container
+  ul.StoreList
+    - 5.times do
+      li.StoreList-item
+        .StoreList-block
+          .StoreList-img
+            img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
+        .StoreList-block
+          span.StoreList-title Ração Pedigree Junior - 10kg
+        .StoreList-block
+          .StoreList-price
+            span.PriceBox-text Preço
+            p.PriceBox-price RS 25000,20
+        .StoreList-block
+          .StoreList-price
+            span.PriceBox-text.PriceBox-text--sm Entrega
+            p.PriceBox-text.u-textOrange Tele-entrega
+        .StoreList-block
+          .StoreList-price
+            span.PriceBox-text.PriceBox-text--sm Cartão
+            p.PriceBox-text.u-textOrange Crédito, Débito
+        .StoreList-action.u-alignVertical
+          button.StoreList-button.Button Ir para loja

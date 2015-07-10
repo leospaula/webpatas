@@ -1,0 +1,39 @@
+// # =================================================================
+// # Shop
+// # =================================================================
+
+// # Profile
+// # =================================================================
+
+.storeProfile {
+  background: #fff;
+  border-bottom: 1px solid $grayLight;
+}
+
+.storeProfile-info {
+  padding: 20px 0;
+}
+
+.storeProfile-img {
+  padding: 20px;
+}
+
+.storeProfile-title {
+  margin-bottom: 0;
+}
+
+.storeProfile-price {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: $grayDark;
+}
+
+.storeProfile-currency {
+  color: $orange;
+  font-size: 2.4rem;
+}
+
+.storeProfile-details {
+  text-transform: uppercase;
+  color: $grayDark;
+}

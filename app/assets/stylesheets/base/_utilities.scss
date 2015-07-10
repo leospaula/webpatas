@@ -20,7 +20,6 @@
   }
 }
 
-
 .u-inputInline {
   width: auto !important;
   display: inline-block;
@@ -35,4 +34,8 @@
   float: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+.u-textOrange {
+  color: $orange !important;
 }

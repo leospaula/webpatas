@@ -1,13 +1,50 @@
-div
-  p = @product.name
-  p = @product.brand
-  == @product.description
-  == @product.technical_information
-  p = @product.sku
-  .galeria
-    - %i(image_1 image_2 image_3 image_4).each do |image|
-      = image_tag @product.send(image).url if @product.send("#{image}?")
-
-- @items.each do |item|
-  = link_to item.price, item_path(item)
-  hr
+main.gray
+  .container
+    .BackButton
+      a.Button Voltar
+    .storeProfile
+      .row
+        .col-md-3
+          .storeProfile-img
+            .Galeria
+              - %i(image_1 image_2 image_3 image_4).each do |image|
+                = image_tag @product.send(image).url if @product.send("#{image}?")
+        .col-md-9
+          .storeProfile-info
+            h1.storeProfile-title = @product.name
+            span.Label = @product.brand
+            p.storeProfile-price
+              | A partir de
+              span.storeProfile-currency  R$ 30,20
+              |  em 9 lojas
+            span.storeProfile-details Detalhes
+            p == @product.description
+  .container
+    .row
+      .col-md-12
+        ul.StoreList
+          - 5.times do
+            li.StoreList-item
+              .StoreList-block
+                .StoreList-img
+                  img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
+              .StoreList-block
+                span.StoreList-title Ração Pedigree Junior - 10kg
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text Preço
+                  p.PriceBox-price RS 25000,20
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text.PriceBox-text--sm Entrega
+                  p.PriceBox-text.u-textOrange Tele-entrega
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text.PriceBox-text--sm Cartão
+                  p.PriceBox-text.u-textOrange Crédito, Débito
+              .StoreList-action.u-alignVertical
+                button.StoreList-button.Button Ir para loja
+    == @product.technical_information
+    p = @product.sku
+  - @items.each do |item|
+    p = item.inspect
