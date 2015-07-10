@@ -1,7 +1,7 @@
 main.gray
   .container
     .BackButton
-      a.Button Voltar
+      = link_to 'Voltar', :back, class: 'Button'
     .profile
       .row
         .col-md-3
@@ -15,10 +15,11 @@ main.gray
             span.Label = @product.brand
             p.profile-price
               | A partir de
-              span.profile-currency  R$ 30,20
-              |  em 9 lojas
+              span.profile-currency = number_to_currency @items.minimum(:price)
+              |  em #{@items.count} lojas
             span.profile-details Detalhes
-            p == @product.description
+            == @product.description
+            == @product.technical_information
   .container
     .row
       .col-md-12
@@ -27,9 +28,9 @@ main.gray
             li.StoreList-item
               .StoreList-block
                 .StoreList-img
-                  = image_tag item.image_1, class: 'u-alignVertical'
+                  = image_tag item.store.logo.url, class: 'u-alignVertical' if item.store.logo?
               .StoreList-block
-                span.StoreList-title = item.name
+                span.StoreList-title = item.store_name
               .StoreList-block
                 .StoreList-price
                   span.PriceBox-text Preço
@@ -37,15 +38,17 @@ main.gray
               .StoreList-block
                 .StoreList-price
                   span.PriceBox-text.PriceBox-text--sm Entrega
-                  p.PriceBox-text.u-textOrange = item.store.delivers ? "Tele-entrega" : "Não"
+                  p.PriceBox-text.u-textOrange = item.store_delivers? ? "Tele-entrega" : "Não"
               .StoreList-block
                 .StoreList-price
                   span.PriceBox-text.PriceBox-text--sm Cartão
                   p.PriceBox-text.u-textOrange
-                    - if !item.store.accept_debit_card && !item.store.accept_credit_card
-                      = "Não"
+                    - if item.store_accept_card?
+                      - cards = []
+                      - cards << 'Crédito' if item.store_accept_credit_card?
+                      - cards << 'Débito' if item.store_accept_debit_card?
+                      = cards.join(', ')
                     - else
-                      = "Débito" if item.store.accept_debit_card
-                      = "Crédito" if item.store.accept_credit_card
+                      | Não
               .StoreList-action.u-alignVertical
-                = link_to "Ir para loja", store_path(item.store,item_id: item), class: 'StoreList-button Button'
+                = link_to "Ir para loja", store_path(item.store, item_id: item), class: 'StoreList-button Button'

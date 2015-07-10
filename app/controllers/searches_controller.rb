@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   def show
-    return unless params[:q] # Skip search logic unless have a query
+    redirect_to root_path unless params[:q] # Skip search logic unless have a query
     search = Search.public_products(params, request.remote_ip)
     if search.valid?
       if search.object.direct?

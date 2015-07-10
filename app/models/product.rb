@@ -6,6 +6,18 @@ class Product < ActiveRecord::Base
 
   scope :having_items, -> { where(id: Item.uniq.pluck(:product_id)) }
   scope :with_name, -> (name) { where(%q{"products"."name" ~* ?}, name) }
+  scope :with_filters, -> (filters) do
+    products = all
+    store_filters = filters.slice(:accept_credit_card, :accept_debit_card, :delivers)
+    if store_filters.any?
+      #products = joins(items: [:store]).where(items: { store: store_filters } )
+      #joins(items: :store).where(items: {store: Store.where(store_filters)})
+      products = joins(items: :store).merge(Store.where(store_filters))
+    end
+    filters = filters.except(*store_filters.keys)
+    products = products.where(filters) if filters.any?
+    products.distinct
+  end
 
   (1..4).each do |i|
     mount_uploader :"image_#{i}", ProductImageUploader
