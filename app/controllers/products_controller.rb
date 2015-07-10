@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    ProductAccess.create!(product: @product, ip: request.remote_ip,
+                          address: params[:address], latitude: params[:latitude],
+                          longitude: params[:longitude])
     search = SearchResult.new(params.merge(product_id: params[:id]), request.remote_ip)
     @items = search.fetch
   end
