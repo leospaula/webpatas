@@ -5,9 +5,9 @@
 }
 
 .u-alignVertical {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 @for $value from 5 through ceil(100) {

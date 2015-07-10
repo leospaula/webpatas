@@ -1,39 +1,39 @@
 // # =================================================================
-// # Shop
+// # Product
 // # =================================================================
 
 // # Profile
 // # =================================================================
 
-.storeProfile {
+.productProfile {
   background: #fff;
   border-bottom: 1px solid $grayLight;
 }
 
-.storeProfile-info {
+.productProfile-info {
   padding: 20px 0;
 }
 
-.storeProfile-img {
+.productProfile-img {
   padding: 20px;
 }
 
-.storeProfile-title {
+.productProfile-title {
   margin-bottom: 0;
 }
 
-.storeProfile-price {
+.productProfile-price {
   margin-top: 20px;
   margin-bottom: 20px;
   color: $grayDark;
 }
 
-.storeProfile-currency {
+.productProfile-currency {
   color: $orange;
   font-size: 2.4rem;
 }
 
-.storeProfile-details {
+.productProfile-details {
   text-transform: uppercase;
   color: $grayDark;
 }

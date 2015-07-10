@@ -2,49 +2,50 @@ main.gray
   .container
     .BackButton
       a.Button Voltar
-    .storeProfile
+    .productProfile
       .row
         .col-md-3
-          .storeProfile-img
+          .productProfile-img
             .Galeria
               - %i(image_1 image_2 image_3 image_4).each do |image|
                 = image_tag @product.send(image).url if @product.send("#{image}?")
         .col-md-9
-          .storeProfile-info
-            h1.storeProfile-title = @product.name
+          .productProfile-info
+            h1.productProfile-title = @product.name
             span.Label = @product.brand
-            p.storeProfile-price
+            p.productProfile-price
               | A partir de
-              span.storeProfile-currency  R$ 30,20
+              span.productProfile-currency  R$ 30,20
               |  em 9 lojas
-            span.storeProfile-details Detalhes
+            span.productProfile-details Detalhes
             p == @product.description
   .container
     .row
       .col-md-12
         ul.StoreList
-          - 5.times do
+          - @items.each do |item|
             li.StoreList-item
               .StoreList-block
                 .StoreList-img
-                  img src='https://dogindeed.com/media/catalog/product/p/e/ped1_1.jpg'
+                  = image_tag item.image_1, class: 'u-alignVertical'
               .StoreList-block
-                span.StoreList-title Ração Pedigree Junior - 10kg
+                span.StoreList-title = item.name
               .StoreList-block
                 .StoreList-price
                   span.PriceBox-text Preço
-                  p.PriceBox-price RS 25000,20
+                  p.PriceBox-price = number_to_currency(item.price)
               .StoreList-block
                 .StoreList-price
                   span.PriceBox-text.PriceBox-text--sm Entrega
-                  p.PriceBox-text.u-textOrange Tele-entrega
+                  p.PriceBox-text.u-textOrange = item.store.delivers ? "Tele-entrega" : "Não"
               .StoreList-block
                 .StoreList-price
                   span.PriceBox-text.PriceBox-text--sm Cartão
-                  p.PriceBox-text.u-textOrange Crédito, Débito
+                  p.PriceBox-text.u-textOrange
+                    - if !item.store.accept_debit_card && !item.store.accept_credit_card
+                      = "Não"
+                    - else
+                      = "Débito" if item.store.accept_debit_card
+                      = "Crédito" if item.store.accept_credit_card
               .StoreList-action.u-alignVertical
-                button.StoreList-button.Button Ir para loja
-    == @product.technical_information
-    p = @product.sku
-  - @items.each do |item|
-    p = item.inspect
+                = link_to "Ir para loja", store_path(item.store), class: 'StoreList-button Button'
