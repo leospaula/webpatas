@@ -48,4 +48,4 @@ main.gray
                       = "Débito" if item.store.accept_debit_card
                       = "Crédito" if item.store.accept_credit_card
               .StoreList-action.u-alignVertical
-                = link_to "Ir para loja", store_path(item.store), class: 'StoreList-button Button'
+                = link_to "Ir para loja", store_path(item.store,item_id: item), class: 'StoreList-button Button'
