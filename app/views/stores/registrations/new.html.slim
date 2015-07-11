@@ -1,22 +1,43 @@
-h2 Sign up
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-    = f.input :name
-    = f.input :address, input_html: { class: 'geocontrast' }
-    = f.input :telephone
-    = f.input :website
-    = f.input :description
-    = f.input :logo
-    = f.input :accept_credit_card
-    = f.input :accept_debit_card
-    = f.input :delivers
-    = f.input :delivery_hours
-    = f.input :business_hours
-    = f.input :cnpj
-    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-    = f.input :password_confirmation, required: true
-  .form-actions
-    = f.button :submit, "Sign up"
-= render "stores/shared/links"
+main.gray
+  .container
+    .col-md-6.u-colCentered
+      .BoxForm.BoxForm--padding
+        .BoxForm-head
+          h2.BoxForm-title Sign up
+        .BoxForm-body
+          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = f.error_notification
+            .form-inputs
+              .form-group
+                = f.input :email, required: true, autofocus: true, placeholder: 'usuario@exemplo.com'
+              .form-group
+                = f.input :name
+              .form-group
+                = f.input :address, input_html: { class: 'geocontrast' }
+              .form-group
+                = f.input :telephone, placeholder: '(99) 9999-9999'
+              .form-group
+                = f.input :website, placeholder: 'www.meusite.com'
+              .form-group
+                = f.input :description
+              .form-group
+                = f.input :logo
+              .form-group
+                = f.input :accept_credit_card
+              .form-group
+                = f.input :accept_debit_card
+              .form-group
+                = f.input :delivers
+              .form-group
+                = f.input :delivery_hours
+              .form-group
+                = f.input :business_hours
+              .form-group
+                = f.input :cnpj
+              .form-group
+                = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+              .form-group
+                = f.input :password_confirmation, required: true
+            .BoxForm-action
+              = f.button :submit, "Sign up", class: 'Button Button--block'
+          = render "stores/shared/links"
