@@ -4,11 +4,11 @@ header.Header
     nav.Header-nav
       ul.Menu
         li.Menu-item
-          = link_to 'Sobre', about_path, class: 'Menu-link'
+          a.Menu-link href="#about" title="Sobre a Webpatas" Sobre
         li.Menu-item
           - if current_store
-            = link_to 'Dashboard', dashboard_path, class: 'Menu-link'
+            = link_to 'Dashboard', dashboard_path, class: 'Menu-link', title: 'Dashboard da Loja'
           - else
-            = link_to 'Lojista', new_store_session_path, class: 'Menu-link'
+            a.Menu-link href="#shop" title="Para lojistas" Lojista
         li.Menu-item
-          = link_to 'Contato', contact_path, class: 'Menu-link'
+          a.Menu-link href="mailto:contato@webpatas.com" title="Mande um email para nós" Contato
