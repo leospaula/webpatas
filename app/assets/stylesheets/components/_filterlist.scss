@@ -5,7 +5,8 @@
   border-bottom-right-radius: 5px;
   position: sticky;
   top: 0;
-  padding: 20px;
+  padding: 30px;
+  font-size: 1.4rem;
 }
 
 .FilterList-header {
@@ -24,7 +25,7 @@
   color: $orange;
   margin-bottom: 0;
   font-weight: bold;
-  padding: 20px;
+  padding: 30px;
 }
 
 .FilterList-divider {
@@ -45,5 +46,19 @@
     margin-top: 0;
     margin-bottom: 0;
     cursor: pointer;
+    font-weight: normal;
+  }
+
+  input {
+    position: relative;
+    top: -3px;
+  }
+}
+
+.FilterList-action {
+  margin-top: 20px;
+
+  @media (max-width: #{$mobileBreak}) {
+    width: 100%;
   }
 }

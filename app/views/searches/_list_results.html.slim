@@ -7,42 +7,38 @@ main.searchResults
             - %i(address address_formatted latitude longitude product_id q).each do |param|
               input[name=param value="#{params[param]}" type="hidden"]
             .FilterList-header
-              h2.FilterList-title Filtrar por:
+              h2.FilterList-title title="Filtrar por" Filtrar por:
             ul.FilterList
-              li.FilterList-divider Marcas
+              li.FilterList-divider title="Marcas" Marcas
               - @products.object.list_results.map(&:product).map(&:brand).uniq.each do |brand|
                 li.FilterList-item
-                  label
-                    - if params[:brand] && params[:brand].include?(brand)
-                      input[name="brand[]" type="checkbox" value=brand checked="checked"]
-                    - else
-                      input[name="brand[]" type="checkbox" value=brand]
-                    = brand
-              li.FilterList-divider Entrega
-              li.FilterList-item
-                label
-                  - if params[:delivers]
-                    input[name="delivers" type="checkbox" checked="checked"]
+                  - if params[:brand] && params[:brand].include?(brand)
+                    input[name="brand[]" type="checkbox" value=brand checked="checked" title=brand]
                   - else
-                    input[name="delivers" type="checkbox"]
-                  | Tele-entrega
-              li.FilterList-divider Aceita cartão
+                    input[name="brand[]" type="checkbox" value=brand title=brand]
+                  label = brand
+              li.FilterList-divider title="Entrega" Entrega
               li.FilterList-item
-                label
-                  - if params[:credit]
-                    input[name="credit" type="checkbox" checked="checked"]
-                  - else
-                    input[name="credit" type="checkbox"]
-                  | Crédito
+                - if params[:delivers]
+                  input[name="delivers" type="checkbox" checked="checked" title="Tele-entrega"]
+                - else
+                  input[name="delivers" type="checkbox" title="Tele-entrega"]
+                label Tele-entrega
+              li.FilterList-divider title="Aceita cartão" Aceita cartão
               li.FilterList-item
-                label
-                  - if params[:debit]
-                    input[name="debit" type="checkbox" checked="checked"]
-                  - else
-                    input[name="debit" type="checkbox"]
-                  | Débito
-              button.Button[type="submit"]
-                | Filtrar
+                - if params[:credit]
+                  input[name="credit" type="checkbox" checked="checked" title="Crédito"]
+                - else
+                  input[name="credit" type="checkbox" title="Crédito"]
+                label Crédito
+              li.FilterList-item
+                - if params[:debit]
+                  input[name="debit" type="checkbox" checked="checked" title="Débito"]
+                - else
+                  input[name="debit" type="checkbox" title="Débito"]
+                label Débito
+              li.FilterList-action
+                button.Button.Button--md[type="submit" title="Filtrar"] Filtrar
       - if @products.results.empty?
         .col-sm-8.col-md-9
           .searchResults-list
