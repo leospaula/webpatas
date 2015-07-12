@@ -3,6 +3,18 @@ ActiveAdmin.register Product do
     :image_2, :image_3, :image_4, :technical_information, sub_category_ids: []
   menu priority: 5
 
+  index do
+    column :id
+    column :image do |product|
+      image_tag product.image_1.url, size: '100x100'
+    end
+    column :name
+    column :sku
+    column :reference
+    column :brand
+    actions
+  end
+
   form do |f|
     f.semantic_errors
     f.inputs do
