@@ -1,6 +1,7 @@
 ActiveAdmin.register Product do
   permit_params :name, :description, :brand, :reference, :sku, :image_1,
     :image_2, :image_3, :image_4, :technical_information, sub_category_ids: []
+  menu priority: 5
 
   form do |f|
     f.semantic_errors

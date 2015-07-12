@@ -2,6 +2,7 @@ ActiveAdmin.register Store do
   permit_params :name, :address, :telephone, :website, :description, :logo,
                 :accept_credit_card,:accept_debit_card, :delivers, :blocked,
                 :delivery_hours, :business_hours, :cnpj
+  menu priority: 7
 
   index do
     selectable_column
