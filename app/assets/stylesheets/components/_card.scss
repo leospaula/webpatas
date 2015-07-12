@@ -1,7 +1,7 @@
 .Card {
   @extend .clearfix;
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
   width: 100%;
 
   &:not(:last-of-type) {
@@ -23,6 +23,8 @@
   width: 150px;
   height: 150px;
   position: relative;
+  background-size: cover;
+  background-position: center center;
 
   img {
     position: absolute;
@@ -35,16 +37,17 @@
 .Card-title {
   color: $color-orange--card;
   font-size: 2.5rem;
+  line-height: 3rem;
   margin-bottom: 5px;
 }
 
 .Card-action {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .Card-block {
   float: left;
-  width: calc(100% - 160px - 28% - 1.0rem);
+  width: calc(100% - 170px - 28% - 1.0rem);
 
   &:first-of-type {
     width: 150px;
@@ -75,5 +78,9 @@
     float: none !important; // ovewrite pseudo selectors
     width: 100% !important;
     margin: 0 !important;
+  }
+
+  .Button--sm {
+    width: 100%;
   }
 }

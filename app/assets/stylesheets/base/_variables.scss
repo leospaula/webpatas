@@ -13,7 +13,7 @@ $grayLight:  #f2f2f2;
 $gray:       #ccc;
 $grayDark:   #999;
 $brown:      #ab7a51;
-$brownDark:   #5f4a3c;
+$brownDark:  #5f4a3c;
 
 // # ========== Radius
 $radius: 5px;
@@ -22,7 +22,7 @@ $radius: 5px;
 $fontFamily: 'Montserrat';
 
 // # ========== Mobile
-$mobileBreak: 500px;
+$mobileBreak: 768px;
 
 // # Components
 // # =================================================================
@@ -53,7 +53,7 @@ $color-orange--card: $orange;
 
 // # ========== Price box
 $color-orange--priceBox: $orange;
-$color-gray--priceBox: $gray;
+$color-gray--priceBox: $grayDark;
 
 // # ========== Dashboard list
 $color-orange--dashboardList: $orange;
