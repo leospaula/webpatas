@@ -9,14 +9,15 @@ main.searchResults
             .FilterList-header
               h2.FilterList-title title="Filtrar por" Filtrar por:
             ul.FilterList
-              li.FilterList-divider title="Marcas" Marcas
-              - @products.object.list_results.map(&:product).map(&:brand).uniq.each do |brand|
-                li.FilterList-item
-                  - if params[:brand] && params[:brand].include?(brand)
-                    input[name="brand[]" type="checkbox" value=brand checked="checked" title=brand]
-                  - else
-                    input[name="brand[]" type="checkbox" value=brand title=brand]
-                  label = brand
+              - if @products.object.list_results.map(&:product).map(&:brand).present?
+                li.FilterList-divider title="Marcas" Marcas
+                - @products.object.list_results.map(&:product).map(&:brand).uniq.each do |brand|
+                  li.FilterList-item
+                    - if params[:brand] && params[:brand].include?(brand)
+                      input[name="brand[]" type="checkbox" value=brand checked="checked" title=brand]
+                    - else
+                      input[name="brand[]" type="checkbox" value=brand title=brand]
+                    label = brand
               li.FilterList-divider title="Entrega" Entrega
               li.FilterList-item
                 - if params[:delivers]
