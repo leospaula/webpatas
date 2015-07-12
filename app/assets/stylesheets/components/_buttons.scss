@@ -8,11 +8,11 @@
   cursor: pointer;
   border-radius: $borderRadius--button;
   font-size: 1.4rem;
-  transition: all .4 ease;
+  transition: all .4s ease;
 
   &:hover,
   &:focus {
-    background-color: $background-orangeLight--button;
+    background-color: $brownDark;
     text-decoration: none;
     color: #fff;
   }

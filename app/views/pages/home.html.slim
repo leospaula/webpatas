@@ -1,12 +1,12 @@
 section.heroCard
   main.heroCard-middle
-    .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+    .col-sm-10.col-md-8.u-colCentered
       h1.heroCard-title
         | Seu pet bem cuidado
-    .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+    .col-sm-8.col-md-6.u-colCentered
       p.heroCard-description
         | Encontre os melhores produtos e medicamentos para cães e gatos próximos de você
-    .col-md-8.col-md-offset-2
+    .col-md-8.u-colCentered
       .heroCard-search
         = form_tag search_path, method: :get
           #remote
@@ -32,33 +32,43 @@ section.hero.heroAbout
     h2.hero-title Porquê a Webpatas?
     p.hero-description Temos muitos beneficios para você
   .container.heroAbout-boxes
-    .col-md-10.u-colCentered
-      - 3.times do
-        .col-md-4
-          .Boxes
-            = image_tag 'ico-money.png', class: 'Boxes-img'
-            h3.Boxes-title Atraia novos clientes
-            p.Boxes-description Amplie a sua visibilidade na sua região. Com a Webpatas você consegue divulgar sua loja para novos potências clientes próximos de você.
+    .col-sm-12.col-md-10.u-colCentered
+      .col-sm-4
+        .Boxes
+          = image_tag 'ico-lupa.png', class: 'Boxes-img', title: 'Os melhores preços'
+          h3.Boxes-title Os melhores preços
+          p.Boxes-description Não fique mais refém de uma petshop. Encontre perto de onde você está os melhores preços para qualquer produto.
+      .col-sm-4
+        .Boxes
+          = image_tag 'ico-money.png', class: 'Boxes-img', title: 'Todos produtos aqui'
+          h3.Boxes-title Todos produtos aqui
+          p.Boxes-description Tá dificil achar aquele produto que nunca tem na loja? Agora ficou fácil! Possuimos a mais completa base de produtos e medicamentos pets.
+      .col-sm-4
+        .Boxes
+          = image_tag 'ico-heart.png', class: 'Boxes-img', title: 'Comodidade sem limites'
+          h3.Boxes-title Comodidade sem limites
+          p.Boxes-description Encontre o que você procura perto de você, seja na sua casa, no trabalho ou onde estiver. Este é um texto de exmeplo.
 section.hero.heroShop
   .container
-    h2.hero-title Porquê a Webpatas?
-    p.hero-description Temos muitos beneficios para você
+    h2.hero-title Para lojistas
+    p.hero-description Se você é lojista temos algo especial par você
   .container.hero-boxes
     .col-md-10.u-colCentered
-      .col-md-4
+      .col-sm-6.col-md-4
         .Boxes
           = image_tag 'ico-cestinha.png', class: 'Boxes-img'
           h3.Boxes-title Atraia novos clientes
           p.Boxes-description Amplie a sua visibilidade na sua região. Com a Webpatas você consegue divulgar sua loja para novos potências clientes próximos de você.
-      .col-md-4
+      .col-sm-6.col-md-4
         .Boxes
           = image_tag 'ico-chart.png', class: 'Boxes-img'
           h3.Boxes-title Entenda seus clientes
           p.Boxes-description Nós te ajudamos a entender o que seus clientes potenciais querem na sua região. Você consegue se planejar melhor explora novas oportunidades.
-      .col-md-4
+      .col-sm-12.col-md-4
         .Boxes.Boxes--highlighted
           h3.Boxes-title Começe agora!
           p.Boxes-description lang="pt-BR" Faça seu cadastro em nossa plataforma e passe a ser encontrado pelas pessoas ao seu re&shy;dor e muito mais.
-          button.Button.Button--hero Cadastre-se
-
-
+          = link_to 'Cadastre-se', new_store_registration_path, class: 'Button Button--hero Button--block'
+          .Boxes-description
+            | ou&nbsp;
+            = link_to 'Entre!', new_store_session_path

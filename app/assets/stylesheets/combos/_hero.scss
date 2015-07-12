@@ -6,8 +6,8 @@
 // # =================================================================
 .hero {
   text-align: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .hero-title {
@@ -97,6 +97,10 @@ input.geocontrast,
 
 // # About
 // # =================================================================
+.heroAbout {
+  background-color: #fff;
+}
+
 .heroShop {
   background: $grayLight;
 }
