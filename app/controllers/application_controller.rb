@@ -22,6 +22,12 @@ class ApplicationController < ActionController::Base
                                                 :cnpj]
 
   end
+  protected
+
+  def after_sign_in_path_for(resource)
+    flash[:notice] = "Bem vindo"
+    dashboard_path
+  end
 
   private
 
