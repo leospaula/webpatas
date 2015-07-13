@@ -3,8 +3,8 @@
   list-style: none;
   width: 100%;
   background-color: #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 // # ========== Header
@@ -23,7 +23,7 @@
 
 // # ========== Normal itens
 .StoreList-item {
-  padding: 20px;
+  padding: 20px 40px;
   position: relative;
 
   &:not(:last-child) {

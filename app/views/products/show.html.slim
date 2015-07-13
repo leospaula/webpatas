@@ -4,7 +4,7 @@ main.gray
       .col-sm-10.u-colCentered
         .BackButton
           = link_to 'Voltar', :back, class: 'Button'
-        .profile
+        .profile.no-margin
           .row
             .col-sm-4.col-md-3
               .profile-img
@@ -30,7 +30,7 @@ main.gray
                 == @product.technical_information
   .container
     .row
-      .col-md-12
+      .col-md-10.u-colCentered
         ul.StoreList
           - @items.each do |item|
             li.StoreList-item
