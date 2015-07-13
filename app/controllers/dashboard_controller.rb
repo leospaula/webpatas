@@ -12,6 +12,6 @@ class DashboardController < ApplicationController
 
   def items
     @store = current_store
-    @items = current_store.items.page(params[:page]).per(20)
+    @items = current_store.items.order(updated_at: :desc).page(params[:page]).per(20)
   end
 end
