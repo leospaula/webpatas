@@ -13,6 +13,9 @@ ActiveAdmin.register Store do
     column :address
     column :website
     column :blocked
+    column :confirmed_at do |store|
+      store.confirmed? ? l(store.confirmed_at, format: :long) : 'Cadastro pendente'
+    end
     actions
   end
 

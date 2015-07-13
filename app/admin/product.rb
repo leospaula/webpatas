@@ -27,13 +27,13 @@ ActiveAdmin.register Product do
         image_tag product.image_1.url, size: '150x150'
       end
       row :image_2 do |product|
-        image_tag product.image_1.url, size: '150x150'
+        image_tag product.image_2.url, size: '150x150'
       end
       row :image_3 do |product|
-        image_tag product.image_1.url, size: '150x150'
+        image_tag product.image_3.url, size: '150x150'
       end
       row :image_4 do |product|
-        image_tag product.image_1.url, size: '150x150'
+        image_tag product.image_4.url, size: '150x150'
       end
     end
   end
