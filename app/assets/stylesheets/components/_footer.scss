@@ -41,8 +41,15 @@
   font-size: 2rem;
   cursor: pointer;
 
+  .fa {
+    color: #fff;
+  }
+
   &:hover {
     background-color: #fff;
-    color: $background-orange--footer;
+
+    .fa {
+      color: $background-orange--footer;
+    }
   }
 }
