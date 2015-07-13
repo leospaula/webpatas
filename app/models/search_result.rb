@@ -10,6 +10,9 @@ class SearchResult
       send("#{attr}=", value)
     end
     self.ip = ip
+    if latitude.blank? || longitude.blank?
+      self.latitude, self.longitude = Geocoder.coordinates(address_formatted || address)
+    end
   end
 
   %i(direct credit debit delivers).each do |attr|

@@ -55,9 +55,9 @@ main.searchResults
                 .Card-block
                   .Card-image style="background-image: url(#{result.product.image_1.url})"
                 .Card-block.u-pushLeft20
-                  .Card-title = link_to result.product.name, product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers])
+                  .Card-title = link_to result.product.name, product_path(id: result.product, latitude: @products.object.latitude, longitude: @products.object.longitude, address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers])
 
-                  = link_to ' + info', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button Button--neutral Button--sm'
+                  = link_to ' + info', product_path(id: result.product, latitude: @products.object.latitude, longitude: @products.object.longitude, address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button Button--neutral Button--sm'
                 .Card-block
                   .Card-info
                     .PriceBox
@@ -71,4 +71,4 @@ main.searchResults
                     .PriceBox
                       span.PriceBox-shops = "em #{result.stores_count} lojas"
                   .Card-action
-                    = link_to 'Comparar preços', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button Button--block'
+                    = link_to 'Comparar preços', product_path(id: result.product, latitude: @products.object.latitude, longitude: @products.object.longitude, address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button Button--block'
