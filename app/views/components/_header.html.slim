@@ -3,12 +3,18 @@ header.Header
     = link_to 'Webpatas', root_path, class: 'Header-brand u-imageReplace', title: 'Início Webpatas'
     nav.Header-nav
       ul.Menu
-        li.Menu-item
-          a.Menu-link href="#about" title="Sobre a Webpatas" Sobre
-        li.Menu-item
-          - if current_store
+        - if current_store
+          li.Menu-item
+            a.Menu-link href="mailto:contato@webpatas.com" title="Mande um email para nós" Contato
+          li.Menu-item
             = link_to 'Dashboard', dashboard_path, class: 'Menu-link', title: 'Dashboard da Loja'
-          - else
+          li.Menu-item
+            = link_to 'Sair', destroy_store_session_path, method: :delete, class: 'Menu-link', title: 'Sair'
+        - else
+          li.Menu-item
+            a.Menu-link href="#about" title="Sobre a Webpatas" Sobre
+          li.Menu-item
             a.Menu-link href="#shop" title="Para lojistas" Lojista
-        li.Menu-item
-          a.Menu-link href="mailto:contato@webpatas.com" title="Mande um email para nós" Contato
+          li.Menu-item
+            a.Menu-link href="mailto:contato@webpatas.com" title="Mande um email para nós" Contato
+

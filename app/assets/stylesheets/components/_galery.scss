@@ -1,0 +1,32 @@
+.Galery {
+}
+
+.Galery-big {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+
+  img {
+    width: 100%;
+    background-size: cover;
+    padding: 5px;
+    margin: 0 auto;
+  }
+}
+
+.Galery-thumb {
+  width: 100%;
+  max-height: 60px;
+
+  img {
+    border: 1px solid $grayLight;
+    width: 30%;
+    max-height: 60px;
+    background-size: cover;
+
+    &:not(:last-child) {
+      margin-right: 2%;
+    }
+  }
+}
