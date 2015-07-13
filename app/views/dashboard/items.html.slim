@@ -4,7 +4,7 @@ main.gray.u-panelPadding
       = render 'sidebar'
     .col-sm-8.col-md-9
       ul.DashboardList
-        .DashboardList-header
+        .DashboardList-header.clearfix
           span.DashboardList-Headertitle Meus Produtos
           = link_to 'Adicionar Produto', new_item_path, class: 'Button Button--md pull-right'
         - @items.each do |item|

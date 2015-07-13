@@ -5,8 +5,16 @@
 }
 
 .BoxForm-head {
+  @extend .clearfix;
   padding: 30px 40px;
   border-bottom: 1px solid $grayLight;
+
+  .Button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 
 .BoxForm-body {
