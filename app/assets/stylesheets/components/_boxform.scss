@@ -1,8 +1,58 @@
 .BoxForm {
-  background: $grayLight;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.BoxForm-head {
+  padding: 30px 40px;
+  border-bottom: 1px solid $grayLight;
+}
+
+.BoxForm-body {
+  padding: 30px 40px 40px;
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]),
+  textarea {
+    background-color: $grayLight;
+  }
+
+  input[type="file"] {
+    padding: 0;
+  }
+
+  .pin_geocontrast {
+    top: 48px !important;
+    right: 30px !important;
+  }
+}
+
+.store_remember_me {
+  label {
+    font-weight: normal;
+    color: $grayDark;
+  }
+}
+
+.store_accept_credit_card,
+.store_accept_debit_card,
+.store_delivers {
+  label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.BoxForm-title {
+  margin-bottom: 0px;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: $orange;
+  font-weight: normal;
 }
 
 .BoxForm-action {
   margin: 25px 0;
 }
-

@@ -1,10 +1,15 @@
-h2
-  | Resend confirmation instructions
-= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = f.error_notification
-  = f.full_error :confirmation_token
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-  .form-actions
-    = f.button :submit, "Resend confirmation instructions"
-= render "stores/shared/links"
+main.gray.u-panelPadding
+  .container
+    .col-md-6.u-colCentered
+      .BoxForm
+        .BoxForm-head
+          h1.BoxForm-title Reenviar instruções de confirmação
+        .BoxForm-body
+          = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+            = f.error_notification
+            = f.full_error :confirmation_token
+            .form-inputs
+              = f.input :email, required: true, autofocus: true, placeholder: 'exemplo@email.com', title: 'Seu email'
+            .BoxForm-action
+              = f.button :submit, "Reenviar instruções de confirmação", class: 'Button Button--block', title: 'Reenviar instruções de confirmação'
+          = render "stores/shared/links"
