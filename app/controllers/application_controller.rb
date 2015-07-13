@@ -25,8 +25,12 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    flash[:notice] = "Bem vindo"
-    dashboard_path
+    if resource.kind_of?(Store)
+      flash[:notice] = "Bem vindo"
+      dashboard_path
+    else
+      super
+    end
   end
 
   private
