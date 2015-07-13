@@ -12,9 +12,9 @@ header.Header
             = link_to 'Sair', destroy_store_session_path, method: :delete, class: 'Menu-link', title: 'Sair'
         - else
           li.Menu-item
-            a.Menu-link href="#about" title="Sobre a Webpatas" Sobre
+            = link_to 'Sobre', root_path(anchor: 'about'), title: 'Sobre a Webpatas', class: 'Menu-link'
           li.Menu-item
-            a.Menu-link href="#shop" title="Para lojistas" Lojista
+            = link_to 'Lojista', root_path(anchor: 'shop'), title: 'Para lojistas', class: 'Menu-link'
           li.Menu-item
             a.Menu-link href="mailto:contato@webpatas.com" title="Mande um email para nós" Contato
 
