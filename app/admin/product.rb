@@ -47,7 +47,7 @@ ActiveAdmin.register Product do
       f.input :image_1, as: :file
       f.input :image_2, as: :file
       f.input :image_3, as: :file
-      f.input :sub_categories, as: :check_boxes, collection: SubCategory.includes(:category).all.map{|sub| [[sub.category.name, sub.name].join(' - '), sub.id]}
+      f.input :sub_categories, as: :check_boxes
     end
     f.actions
   end
