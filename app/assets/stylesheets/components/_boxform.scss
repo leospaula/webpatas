@@ -1,7 +1,6 @@
 .BoxForm {
   background: #fff;
   border-radius: 5px;
-  margin-top: 20px;
   margin-bottom: 30px;
 }
 
@@ -14,8 +13,9 @@
   padding: 30px 40px 40px;
 
   input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]),
-  textarea {
-    background-color: $grayLight;
+  textarea,
+  input.typeahead {
+    background-color: $grayLight !important;
   }
 
   input[type="file"] {
@@ -28,21 +28,12 @@
   }
 }
 
-.store_remember_me {
-  label {
-    font-weight: normal;
-    color: $grayDark;
-  }
+.BoxForm-details {
+  margin-bottom: 20px;
 }
 
-.store_accept_credit_card,
-.store_accept_debit_card,
-.store_delivers {
-  label {
-    font-weight: normal;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
+.BoxForm-image {
+  width: 100%;
 }
 
 .BoxForm-title {
@@ -55,4 +46,22 @@
 
 .BoxForm-action {
   margin: 25px 0;
+}
+
+.store_remember_me {
+  label {
+    font-weight: normal;
+    color: $grayDark;
+  }
+}
+
+.store_accept_credit_card,
+.store_accept_debit_card,
+.store_delivers,
+.item_available {
+  label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }

@@ -1,55 +1,78 @@
-main.gray
+main.gray.u-panelPadding
   .container
-    .col-md-3
-      .u-panelPadding
-        = render 'dashboard/sidebar'
-    .col-md-9
-      .col-md-9.u-colCentered
-        .BoxForm.u-panelPadding
-          .BoxForm-head
-            h2.BoxForm-title Sign up
-          .BoxForm-body
-            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-              = f.error_notification
-              .form-inputs
-                .form-group
-                = f.input :email, required: true, autofocus: true
-                .form-group
+    .col-sm-4.col-md-3
+      = render 'dashboard/sidebar'
+    .col-sm-8.col-md-9
+      .BoxForm
+        .BoxForm-head
+          h2.BoxForm-title title='Editar minha Loja' Editar minha Loja
+        .BoxForm-body
+          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            = f.error_notification
+            .form-inputs
+              .form-group
                 - if devise_mapping.confirmable? && resource.pending_reconfirmation?
                   p
-                    | Currently waiting confirmation for:
+                    | Aguardando confirmação de:
                     = resource.unconfirmed_email
-                .form-group
-                  = f.input :name
-                .form-group
-                  = f.input :address, input_html: { class: 'geocontrast' }
-                .form-group
-                  = f.input :telephone
-                .form-group
-                  = f.input :website
-                .form-group
-                  = f.input :description
-                .form-group
-                  = f.input :logo
-                .form-group
-                  = f.input :accept_credit_card
-                .form-group
-                  = f.input :accept_debit_card
-                .form-group
-                  = f.input :delivers
-                .form-group
-                  = f.input :delivery_hours
-                .form-group
-                  = f.input :business_hours
-                .form-group
-                  = f.input :cnpj
-                .form-group
-                  = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
-                .form-group
-                  = f.input :password_confirmation, required: false
-                .form-group
-                  = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
-              .BoxForm-action
-                = f.button :submit, "Atualizar", class: 'Button Button--block'
-            h5.pull-left Cancelar minha conta
-            = link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'pull-right Button Button--sm Button--neutral'
+              .row
+                .col-sm-6
+                  .form-group
+                    label Nome da Loja
+                    = f.input :name, placeholder: 'Nome da Loja', title: 'Nome da sua Loja', label: false
+                .col-sm-6
+                  .form-group
+                    = f.input :cnpj, placeholder: 'CNPJ da sua Loja', title: 'CNPJ da sua Loja'
+              / TODO add contact name
+              .form-group
+                label Nome do Responsável
+                = f.input :name, placeholder: 'Nome do Responsável', title: 'Nome do Responsável', label: false
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :email, required: true, autofocus: true, placeholder: 'exemplo@email.com', title: 'Seu email'
+                .col-sm-6
+                  .form-group
+                    = f.input :telephone, placeholder: '(99) 9999-9999', title: 'Seu telefone'
+              .row
+                .col-sm-12
+                  .form-group
+                    = f.input :address, input_html: { class: 'geocontrast' }
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :website, placeholder: 'www.meusite.com', title: 'URL do meu site'
+                / TODO add facebook page link
+                .col-sm-6
+                  .form-group
+                    = f.input :website, placeholder: 'Facebook da loja', title: 'URL da fanpage da loja no Facebook', label: 'Facebook'
+              .form-group
+                = f.input :description, placeholder: 'Pequena descrição da loja...'
+              .form-group
+                = f.input :logo, title: 'Logo da loja'
+              .form-group
+                = f.input :accept_credit_card, title: 'Aceita cartão de crédito'
+                = f.input :accept_debit_card,  title: 'Aceita cartão de débito'
+                = f.input :delivers, title: 'Faz tele-entrega', label: 'Faz tele-entrega'
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :business_hours, placeholder: '8am - 7pm', title: 'Horário de funcionamento'
+                .col-sm-6
+                  .form-group
+                    = f.input :delivery_hours, placeholder: '8am - 10pm', title: 'Horário da tele-entrega', label: 'Horário da tele-entrega'
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :password, autocomplete: "off", hint: "Deixe em branco se não quer alterar", required: false, placeholder: 'Nova senha', title: 'Nova senha'
+                .col-sm-6
+                  .form-group
+                    = f.input :password_confirmation, required: false, placeholder: 'Repita a nova senha', title: 'Repita a nova senha'
+              .form-group
+                = f.input :current_password, hint: "Precisamos da sua senha atual para salvar as alterações", required: true
+            .BoxForm-action
+              = f.button :submit, "Atualizar", class: 'Button Button--block', title: 'Cadastre-se'
+          .form-group
+            label Cancelar minha conta
+            br
+            = link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'Button Button--md Button--neutral'
