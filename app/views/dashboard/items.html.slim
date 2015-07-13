@@ -22,4 +22,5 @@ main.gray.u-panelPadding
                 button.DashboardList-button.Button.u-pushRight5 = icon('pencil')
               = link_to item_path(item), method: :delete, data: { confirm: "Deseja excluir esse item?" }, title: 'Excluír Produto' do
                 button.DashboardList-button.Button = icon('times')
-        = paginate @items
+        .Pagination
+          = paginate @items
