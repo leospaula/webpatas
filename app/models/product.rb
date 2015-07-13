@@ -16,7 +16,7 @@ class Product < ActiveRecord::Base
     products.tap { |collection| collection.where(filters) if filters.any? }.distinct
   end
 
-  (1..4).each do |i|
+  (1..3).each do |i|
     mount_uploader :"image_#{i}", ProductImageUploader
   end
 end

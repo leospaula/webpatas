@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
   permit_params :name, :description, :brand, :reference, :sku, :image_1,
-    :image_2, :image_3, :image_4, :technical_information, sub_category_ids: []
+    :image_2, :image_3, :technical_information, sub_category_ids: []
   menu priority: 5
 
   index do
@@ -32,9 +32,6 @@ ActiveAdmin.register Product do
       row :image_3 do |product|
         image_tag product.image_3.url, size: '150x150'
       end
-      row :image_4 do |product|
-        image_tag product.image_4.url, size: '150x150'
-      end
     end
   end
 
@@ -50,7 +47,6 @@ ActiveAdmin.register Product do
       f.input :image_1, as: :file
       f.input :image_2, as: :file
       f.input :image_3, as: :file
-      f.input :image_4, as: :file
       f.input :sub_categories, as: :check_boxes, collection: SubCategory.includes(:category).all.map{|sub| [[sub.category.name, sub.name].join(' - '), sub.id]}
     end
     f.actions

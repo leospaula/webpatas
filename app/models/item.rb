@@ -5,8 +5,8 @@ class Item < ActiveRecord::Base
   validates :price, :store, presence: true
 
   delegate :name, :description, :technical_information, :brand, :reference,
-    :sku, :image_1, :image_2, :image_3, :image_4, :image_1?, :image_2?,
-    :image_3?, :image_4?, :sub_categories, to: :product
+    :sku, :image_1, :image_2, :image_3, :image_1?, :image_2?, :image_3?,
+    :sub_categories, to: :product
 
   delegate :name, :delivers?, :accept_credit_card?, :accept_debit_card?,
     :accept_card?, to: :store, prefix: true

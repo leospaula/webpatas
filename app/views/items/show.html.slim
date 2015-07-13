@@ -7,5 +7,4 @@ div = "#{Product.human_attribute_name(:sku)}: #{@item.sku}" if @item.sku
 div = image_tag @item.image_1.url if @item.image_1?
 div = image_tag @item.image_2.url if @item.image_2?
 div = image_tag @item.image_3.url if @item.image_3?
-div = image_tag @item.image_4.url if @item.image_4?
 div = number_to_currency(@item.price, precision: 2)
