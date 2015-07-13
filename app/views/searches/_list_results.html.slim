@@ -40,7 +40,7 @@ main.searchResults
                 label Débito
               li.FilterList-action
                 button.Button.Button--md[type="submit" title="Filtrar"] Filtrar
-      - if @products.results.empty?
+      - if @products.results.empty? || @products.object.list_results.map(&:stores_count).uniq.reject(&:zero?).blank?
         .col-sm-8.col-md-9
           .searchResults-list
             .searchResults-header
