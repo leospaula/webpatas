@@ -18,8 +18,8 @@ main.gray.u-panelPadding
                 span.profile-details Preço
                 p.PriceBox-price = number_to_currency(item.price)
             .DashboardList-action.u-alignVertical
-              = link_to edit_item_path(item) do
+              = link_to edit_item_path(item), title: 'Editar Produto' do
                 button.DashboardList-button.Button.u-pushRight5 = icon('pencil')
-              = link_to item_path(item), method: :delete, data: { confirm: "Deseja excluir esse item?" } do
+              = link_to item_path(item), method: :delete, data: { confirm: "Deseja excluir esse item?" }, title: 'Excluír Produto' do
                 button.DashboardList-button.Button = icon('times')
         = paginate @items
