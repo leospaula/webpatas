@@ -24,3 +24,13 @@
   color: #fff;
   transition: all .1s;
 }
+
+@media (max-width: #{$mobileBreak}) {
+  .twitter-typeahead {
+    display: block !important;
+  }
+
+  .Autocomplete-menu {
+    margin-top: -10px;
+  }
+}

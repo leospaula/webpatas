@@ -30,6 +30,8 @@ gem 'pundit', '~> 1.0.1'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 4.3.0'
 gem 'kaminari'
+gem 'maskedinput-rails'
+gem 'maskmoney-rails'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'

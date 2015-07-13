@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    @product = @item.product
     authorize(@item)
     if @item.update_attributes(permitted_params)
       redirect_to dashboard_items_path, notice: 'Atualizado com sucesso'

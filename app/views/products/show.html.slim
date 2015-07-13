@@ -4,16 +4,19 @@ main.gray
       .col-sm-10.u-colCentered
         .BackButton
           = link_to 'Voltar', :back, class: 'Button'
-        .profile
+        .profile.no-margin
           .row
             .col-sm-4.col-md-3
               .profile-img
-                .Galery
-                  .Galery-big
-                    = image_tag @product.image_1.url
-                  .Galery-thumb
+                .Gallery
+                  .Gallery-big
+                    = image_tag @product.image_1.url, class: 'Gallery-image--animate is-active', id: 'image_1'
+                    = image_tag @product.image_2.url, class: 'Gallery-image--animate', id: 'image_2'
+                    = image_tag @product.image_3.url, class: 'Gallery-image--animate', id: 'image_3'
+                  .Gallery-thumb
                     - %i(image_1 image_2 image_3).each do |image|
-                      = image_tag @product.send(image).url if @product.send("#{image}?")
+                      a.Gallery-toggler.js-galeryToggler data-target="##{image}"
+                        = image_tag @product.send(image).url if @product.send("#{image}?")
             .col-sm-8.col-md-9
               .profile-info
                 h1.profile-title = @product.name
@@ -27,7 +30,7 @@ main.gray
                 == @product.technical_information
   .container
     .row
-      .col-md-12
+      .col-md-10.u-colCentered
         ul.StoreList
           - @items.each do |item|
             li.StoreList-item

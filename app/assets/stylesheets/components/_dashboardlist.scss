@@ -99,13 +99,13 @@
   }
 
   .DashboardList-action {
-    position: static;
-    transform: translateY(0);
+    position: static !important;
+    transform: translateY(0) !important;
     margin-top: 10px;
+    text-align: center;
   }
 
   .DashboardList-button {
-    width: 49%;
-    float: left;
+    width: 40%;
   }
 }

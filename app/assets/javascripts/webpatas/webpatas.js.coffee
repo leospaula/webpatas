@@ -1,4 +1,5 @@
 #= require_self
+
 #= require_tree .
 
 window.Webpatas =
@@ -20,5 +21,10 @@ window.Webpatas =
       geoContrast.geoContrast(format: 'formatted')
       geoContrast[0].append_coords()
 
-  modules: -> []
+  modules: -> [
+    Webpatas.Flash
+    Webpatas.MaskedPhone
+    Webpatas.MaskedMonetary
+    Webpatas.Galery
+  ]
     # Some modules that will be used on every page.
