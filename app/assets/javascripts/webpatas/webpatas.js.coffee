@@ -1,4 +1,5 @@
 #= require_self
+
 #= require_tree .
 
 window.Webpatas =
@@ -22,5 +23,7 @@ window.Webpatas =
 
   modules: -> [
     Webpatas.Flash
+    Webpatas.MaskedPhone
+    Webpatas.MaskedMonetary
   ]
     # Some modules that will be used on every page.

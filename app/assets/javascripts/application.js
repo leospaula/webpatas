@@ -9,3 +9,5 @@
 //= require_tree ./webpatas
 //= require nprogress
 //= require nprogress-turbolinks
+//= require maskedinput
+//= require maskmoney
