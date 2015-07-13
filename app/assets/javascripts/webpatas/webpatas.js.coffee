@@ -25,5 +25,6 @@ window.Webpatas =
     Webpatas.Flash
     Webpatas.MaskedPhone
     Webpatas.MaskedMonetary
+    Webpatas.Galery
   ]
     # Some modules that will be used on every page.

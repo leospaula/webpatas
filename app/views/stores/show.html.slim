@@ -13,10 +13,9 @@ main.gray
       .row
         .col-sm-4.col-md-3
           .profile-img
-            .Galery
-              .Galery-big
-                = image_tag @store.logo
-
+            .Gallery
+              .Gallery-big
+                = image_tag @store.logo.url, class: 'Gallery-image' if @store.logo?
         .col-sm-8.col-md-9
           .profile-info
             h1.profile-title = @store.name
