@@ -20,5 +20,7 @@ window.Webpatas =
       geoContrast.geoContrast(format: 'formatted')
       geoContrast[0].append_coords()
 
-  modules: -> []
+  modules: -> [
+    Webpatas.Flash
+  ]
     # Some modules that will be used on every page.
