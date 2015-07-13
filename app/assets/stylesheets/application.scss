@@ -13,11 +13,13 @@
 @import "base/utilities";
 
 // # ========== Components
+@import "components/link";
 @import "components/buttons";
 @import "components/forms";
 @import "components/header";
 @import "components/menu";
 @import "components/filterlist";
+@import "components/icon";
 @import "components/footer";
 @import "components/card";
 @import "components/pricebox";
@@ -26,10 +28,11 @@
 @import "components/menulist";
 @import "components/autocomplete";
 @import "components/label";
-@import "components/galeria";
+@import "components/galery";
 @import "components/storelist";
 @import "components/backbutton";
 @import "components/boxform";
+@import "components/hint";
 
 // # ========== Combos
 @import "combos/hero";

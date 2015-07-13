@@ -1,73 +1,74 @@
 main.searchResults
   .container
-    .searchResults-filter
-      .col-md-3
-        = form_tag search_path, method: :get
-          - %i(address address_formatted latitude longitude product_id q).each do |param|
-            input[name=param value="#{params[param]}" type="hidden"]
-          .FilterList-header
-            h2.FilterList-title Filtrar por:
-          ul.FilterList
-            li.FilterList-divider Marcas
-            - @products.object.list_results.map(&:product).map(&:brand).uniq.each do |brand|
+    .row
+      .searchResults-filter
+        .col-sm-4.col-md-3
+          = form_tag search_path, method: :get
+            - %i(address address_formatted latitude longitude product_id q).each do |param|
+              input[name=param value="#{params[param]}" type="hidden"]
+            .FilterList-header
+              h2.FilterList-title title="Filtrar por" Filtrar por:
+            ul.FilterList
+              - if @products.object.list_results.map(&:product).map(&:brand).present?
+                li.FilterList-divider title="Marcas" Marcas
+                - @products.object.list_results.map(&:product).map(&:brand).uniq.each do |brand|
+                  li.FilterList-item
+                    - if params[:brand] && params[:brand].include?(brand)
+                      input[name="brand[]" type="checkbox" value=brand checked="checked" title=brand]
+                    - else
+                      input[name="brand[]" type="checkbox" value=brand title=brand]
+                    label = brand
+              li.FilterList-divider title="Entrega" Entrega
               li.FilterList-item
-                label
-                  - if params[:brand] && params[:brand].include?(brand)
-                    input[name="brand[]" type="checkbox" value=brand checked="checked"]
-                  - else
-                    input[name="brand[]" type="checkbox" value=brand]
-                  = brand
-            li.FilterList-divider Entrega
-            li.FilterList-item
-              label
                 - if params[:delivers]
-                  input[name="delivers" type="checkbox" checked="checked"]
+                  input[name="delivers" type="checkbox" checked="checked" title="Tele-entrega"]
                 - else
-                  input[name="delivers" type="checkbox"]
-                | Tele-entrega
-            li.FilterList-divider Aceita cartão
-            li.FilterList-item
-              label
+                  input[name="delivers" type="checkbox" title="Tele-entrega"]
+                label Tele-entrega
+              li.FilterList-divider title="Aceita cartão" Aceita cartão
+              li.FilterList-item
                 - if params[:credit]
-                  input[name="credit" type="checkbox" checked="checked"]
+                  input[name="credit" type="checkbox" checked="checked" title="Crédito"]
                 - else
-                  input[name="credit" type="checkbox"]
-                | Crédito
-            li.FilterList-item
-              label
+                  input[name="credit" type="checkbox" title="Crédito"]
+                label Crédito
+              li.FilterList-item
                 - if params[:debit]
-                  input[name="debit" type="checkbox" checked="checked"]
+                  input[name="debit" type="checkbox" checked="checked" title="Débito"]
                 - else
-                  input[name="debit" type="checkbox"]
-                | Débito
-            button.Button[type="submit"]
-              | Filtrar
-    - if @products.results.empty?
-      h1 Nenhum resultado para #{params[:q]}
-    - else
-      .col-md-9
-        .searchResults-list
-          .searchResults-header
-            h2.searchResults-title Resultado para "#{params[:q]}"
-          - @products.object.list_results.each do |result|
-            article.Card
-              .Card-block
-                .Card-image
-                  = image_tag result.product.image_1.url
-              .Card-block.u-pushLeft10
-                h1 = link_to result.product.name, product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Card-title'
+                  input[name="debit" type="checkbox" title="Débito"]
+                label Débito
+              li.FilterList-action
+                button.Button.Button--md[type="submit" title="Filtrar"] Filtrar
+      - if @products.results.empty?
+        .col-sm-8.col-md-9
+          .searchResults-list
+            .searchResults-header
+              h2.searchResults-title Nenhum resultado para "#{params[:q]}"
+      - else
+        .col-sm-8.col-md-9
+          .searchResults-list
+            .searchResults-header
+              h2.searchResults-title Resultado para "#{params[:q]}"
+            - @products.object.list_results.each do |result|
+              article.Card
+                .Card-block
+                  .Card-image style="background-image: url(#{result.product.image_1.url})"
+                .Card-block.u-pushLeft20
+                  .Card-title = link_to result.product.name, product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers])
 
-                = link_to ' + info', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button Button--neutral Button--sm'
-              .Card-block
-                .Card-info
-                  .PriceBox
-                    span.PriceBox-text De
-                    span.PriceBox-currency R$
-                    span.PriceBox-price = number_to_currency(result.min_price, unit: "")
-                  .PriceBox
-                    span.PriceBox-text Até
-                    span.PriceBox-currency R$
-                    span.PriceBox-price = number_to_currency(result.max_price, unit: "")
-                    span.PriceBox-shops = "em #{result.stores_count} lojas"
-                .Card-action
-                  = link_to 'Comparar preços', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button'
+                  = link_to ' + info', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button Button--neutral Button--sm'
+                .Card-block
+                  .Card-info
+                    .PriceBox
+                      span.PriceBox-text De
+                      span.PriceBox-currency R$
+                      span.PriceBox-price = number_to_currency(result.min_price, unit: "")
+                    .PriceBox
+                      span.PriceBox-text Até
+                      span.PriceBox-currency R$
+                      span.PriceBox-price = number_to_currency(result.max_price, unit: "")
+                    .PriceBox
+                      span.PriceBox-shops = "em #{result.stores_count} lojas"
+                  .Card-action
+                    = link_to 'Comparar preços', product_path(id: result.product, latitude: params[:latitude], longitude: params[:longitude], address: params[:address], formatted_address: params[:formatted_address], brand: params[:brand], credit: params[:credit], debit: params[:debit], delivers: params[:delivers]), class: 'Button Button--block'

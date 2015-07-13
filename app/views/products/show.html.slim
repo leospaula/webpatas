@@ -1,25 +1,30 @@
 main.gray
   .container
-    .BackButton
-      = link_to 'Voltar', :back, class: 'Button'
-    .profile
-      .row
-        .col-md-3
-          .profile-img
-            .Galeria
-              - %i(image_1 image_2 image_3 image_4).each do |image|
-                = image_tag @product.send(image).url if @product.send("#{image}?")
-        .col-md-9
-          .profile-info
-            h1.profile-title = @product.name
-            span.Label = @product.brand
-            p.profile-price
-              | A partir de
-              span.profile-currency = number_to_currency @items.minimum(:price)
-              |  em #{@items.count} lojas
-            span.profile-details Detalhes
-            == @product.description
-            == @product.technical_information
+    .row
+      .col-sm-10.u-colCentered
+        .BackButton
+          = link_to 'Voltar', :back, class: 'Button'
+        .profile
+          .row
+            .col-sm-4.col-md-3
+              .profile-img
+                .Galery
+                  .Galery-big
+                    = image_tag @product.image_1.url
+                  .Galery-thumb
+                    - %i(image_1 image_2 image_3).each do |image|
+                      = image_tag @product.send(image).url if @product.send("#{image}?")
+            .col-sm-8.col-md-9
+              .profile-info
+                h1.profile-title = @product.name
+                span.Label = @product.brand
+                p.profile-price
+                  | A partir de
+                  span.profile-currency = number_to_currency @items.minimum(:price)
+                  |  em #{@items.count} lojas
+                span.profile-details Detalhes
+                == @product.description
+                == @product.technical_information
   .container
     .row
       .col-md-12

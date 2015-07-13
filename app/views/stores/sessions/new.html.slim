@@ -1,18 +1,17 @@
 main.gray.u-panelPadding
   .container
     .col-md-6.u-colCentered
-      .BoxForm.BoxForm--padding
+      .BoxForm
         .BoxForm-head
-          h2.BoxForm-title Log in
+          h1.BoxForm-title title="Entrar" Entrar
         .BoxForm-body
-        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .form-inputs
-            .form-group
-              = f.input :email, required: false, autofocus: true
-            .form-group
-              = f.input :password, required: false
-
-            = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-          .BoxForm-action
-            = f.button :submit, "Log in", class: 'Button Button--block'
-        = render "stores/shared/links"
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .form-inputs
+              .form-group
+                = f.input :email, required: false, autofocus: true, placeholder: 'exemplo@email.com', title: 'Seu email'
+              .form-group
+                = f.input :password, required: false, placeholder: 'Sua senha', title: 'Sua senha'
+              = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+            .BoxForm-action
+              = f.button :submit, "Entrar", class: 'Button Button--block', title: 'Entrar'
+          = render "stores/shared/links"

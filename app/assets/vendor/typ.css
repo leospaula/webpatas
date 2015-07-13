@@ -12,8 +12,7 @@
 
 body {
   font-size: 1.6em;
-  line-height: 1.5;
-  background-image: url("http://basehold.it/i/24"); }
+  line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6,
 .like-h1, .like-h2, .like-h3, .like-h4, .like-h5, .like-h6 {
@@ -65,7 +64,7 @@ h6,
   line-height: 1.6; }
 
 p {
-  margin-bottom: 2.3rem; }
+  margin-bottom: 1.6rem; }
 
 blockquote,
 .quote {

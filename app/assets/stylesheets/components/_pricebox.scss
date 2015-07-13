@@ -1,7 +1,10 @@
+.PriceBox {
+  line-height: 2rem;
+}
+
 .PriceBox-text {
   color: $color-gray--priceBox;
-  font-weight: bold;
-  margin-right: 10px;
+  margin-right: 5px;
   font-size: 1.4rem;
   margin-bottom: 0;
 }
@@ -18,7 +21,7 @@
 
 .PriceBox-price {
   color: $color-orange--priceBox;
-  font-size: 2.0rem;
+  font-size: 2.2rem;
   margin-bottom: 0;
 }
 

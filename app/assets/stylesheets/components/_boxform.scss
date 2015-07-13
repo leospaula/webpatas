@@ -1,8 +1,67 @@
 .BoxForm {
-  background: $grayLight;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.BoxForm-head {
+  padding: 30px 40px;
+  border-bottom: 1px solid $grayLight;
+}
+
+.BoxForm-body {
+  padding: 30px 40px 40px;
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]),
+  textarea,
+  input.typeahead {
+    background-color: $grayLight !important;
+  }
+
+  input[type="file"] {
+    padding: 0;
+  }
+
+  .pin_geocontrast {
+    top: 48px !important;
+    right: 30px !important;
+  }
+}
+
+.BoxForm-details {
+  margin-bottom: 20px;
+}
+
+.BoxForm-image {
+  width: 100%;
+}
+
+.BoxForm-title {
+  margin-bottom: 0px;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: $orange;
+  font-weight: normal;
 }
 
 .BoxForm-action {
   margin: 25px 0;
 }
 
+.store_remember_me {
+  label {
+    font-weight: normal;
+    color: $grayDark;
+  }
+}
+
+.store_accept_credit_card,
+.store_accept_debit_card,
+.store_delivers,
+.item_available {
+  label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}

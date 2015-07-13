@@ -6,8 +6,8 @@
 // # =================================================================
 .hero {
   text-align: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .hero-title {
@@ -30,18 +30,28 @@
 // # =================================================================
 .heroCard {
   display: table;
-  height: calc(100% - 84px);
+  height: calc(100% - 98px);
   background-image: asset-url('dog.jpg');
   background-size: cover;
   background-position: center center;
   text-align: center;
   width: 100%;
+
+  @media (max-width: #{$mobileBreak}) {
+    .u-pushLeft10 {
+      margin-left: 0;
+    }
+    input.typeahead,
+    input.geocontrast {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .heroCard--small {
-  height: calc(40% - 84px);
-  padding-top: 80px;
-  padding-bottom: 60px;
+  height: calc(40% - 98px);
+  padding-top: 65px;
+  padding-bottom: 45px;
 }
 
 .heroCard-middle {
@@ -50,17 +60,21 @@
 }
 
 .heroCard-title {
-  font-size: 5.0rem;
+  font-size: 5.6rem;
+  line-height: 6rem;
   font-weight: bold;
   color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
 }
 
 .heroCard-description {
   color: #fff;
-  font-size: 2.1rem;
-  width: 30%;
+  font-size: 2.3rem;
+  line-height: 2.8rem;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
 }
 
 .heroCard-search {
@@ -70,10 +84,23 @@
 .heroCard-searchDescription {
   color: #fff;
   font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+.twitter-typeahead,
+input.typeahead,
+input.geocontrast,
+.tt-hint,
+.tt-input {
+  width: 100% !important;
 }
 
 // # About
 // # =================================================================
+.heroAbout {
+  background-color: #fff;
+}
+
 .heroShop {
   background: $grayLight;
 }

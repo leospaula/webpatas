@@ -1,34 +1,42 @@
 main.gray
   .container
     .BackButton
-      = link_to 'Voltar', :back, class: 'Button u-pushRight5'
+      = link_to 'Voltar', :back, class: 'Button u-pushRight5', title: 'Voltar'
       - if @store == current_store
-        = link_to 'Editar minha loja', edit_registration_path(current_store), class: 'Button'
+        = link_to 'Editar minha loja', edit_registration_path(current_store), class: 'Button pull-right', title: 'Editar minha loja'
     .profile
       .row
-        .profile-maps
-          .col-md-12
+        .col-md-12
+          .profile-maps
             iframe[width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?q=#{@store.address}&output=embed"]
 
       .row
-        .col-md-4
+        .col-sm-4.col-md-3
           .profile-img
-            .Galeria
-              = image_tag @store.logo
-        .col-md-8
+            .Galery
+              .Galery-big
+                = image_tag @store.logo
+
+        .col-sm-8.col-md-9
           .profile-info
             h1.profile-title = @store.name
-            span = @store.address
-            span = @store.website
+            div
+              span.fa.fa-map-marker
+              span = @store.address
+            div
+              span.fa.fa-globe
+              span
+                = link_to @store.website, target: '_blank', title: 'Site da Loja'
             .profile-billingInfo
+              - if @store.telephone.present?
+                .profile-infoList
+                  span.profile-details Telefone
+                  p.PriceBox-text.u-textOrange = @store.telephone
               .profile-infoList
-                span.PriceBox-text.PriceBox-text--sm Telefone
-                p.PriceBox-text.u-textOrange = @store.telephone
-              .profile-infoList
-                span.PriceBox-text.PriceBox-text--sm Entrega
+                span.profile-details Entrega
                 p.PriceBox-text.u-textOrange = @store.delivers ? "Tele-entrega" : "Não"
               .profile-infoList
-                span.PriceBox-text.PriceBox-text--sm Cartão
+                span.profile-details Cartões
                 p.PriceBox-text.u-textOrange
                   - if @store.accept_debit_card && @store.accept_credit_card
                     | Débito e Crédito

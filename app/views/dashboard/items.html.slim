@@ -1,9 +1,12 @@
 main.gray.u-panelPadding
   .container
-    .col-md-3
+    .col-sm-4.col-md-3
       = render 'sidebar'
-    .col-md-9
+    .col-sm-8.col-md-9
       ul.DashboardList
+        .DashboardList-header
+          span.DashboardList-Headertitle Meus Produtos
+          = link_to 'Adicionar Produto', new_item_path, class: 'Button Button--md pull-right'
         - @items.each do |item|
           li.DashboardList-item
             .DashboardList-block
@@ -12,11 +15,11 @@ main.gray.u-panelPadding
               span.DashboardList-title = item.name
             .DashboardList-block
               .DashboardList-price
-                span.PriceBox-text Preço
+                span.profile-details Preço
                 p.PriceBox-price = number_to_currency(item.price)
             .DashboardList-action.u-alignVertical
-              = link_to edit_item_path(item) do
+              = link_to edit_item_path(item), title: 'Editar Produto' do
                 button.DashboardList-button.Button.u-pushRight5 = icon('pencil')
-              = link_to item_path(item), method: :delete, data: { confirm: "Deseja excluir esse item?" } do
+              = link_to item_path(item), method: :delete, data: { confirm: "Deseja excluir esse item?" }, title: 'Excluír Produto' do
                 button.DashboardList-button.Button = icon('times')
         = paginate @items

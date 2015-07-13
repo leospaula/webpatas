@@ -7,13 +7,18 @@
 // # =================================================================
 .searchResults {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   background: $grayLight;
 }
 
 .searchResults-filter {
   top: 20px;
   position: sticky;
+
+  @media (max-width: #{$mobileBreak}) {
+    position: relative;
+    margin-bottom: 50px;
+  }
 }
 
 .searchResults-list {
@@ -22,7 +27,7 @@
 }
 
 .searchResults-header {
-  padding: 20px;
+  padding: 20px 40px 25px;
   border-bottom: 1px solid $grayLight;
 }
 
@@ -32,4 +37,10 @@
   font-size: 2.4rem;
   color: $orange;
   font-weight: bold;
+}
+
+.pin_geocontrast {
+  top: 20px !important;
+  left: auto !important;
+  right: 20px !important;
 }

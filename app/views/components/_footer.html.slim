@@ -1,19 +1,15 @@
 footer.Footer
-  a.Footer-brand.u-imageReplace
-    | Webpatas
+  = link_to 'Webpatas', root_path, class: 'Footer-brand u-imageReplace', title: 'Início Webpatas'
   nav.Footer-social
     ul
       li
-        = link_to 'https://www.facebook.com/webpatas', class: 'Footer-socialIcon', target: :blank do
+        = link_to 'https://www.facebook.com/webpatas', class: 'Footer-socialIcon', title: 'Curta nossa fanpage', target: :blank do
           = icon('facebook')
       li
-        = link_to 'https://twitter.com/webpatas', class: 'Footer-socialIcon', target: :blank do
+        = link_to 'https://twitter.com/webpatas', class: 'Footer-socialIcon', title: 'Siga-nos no Twitter', target: :blank do
           = icon('twitter')
       li
-        = link_to 'https://instagram.com/webpatas', class: 'Footer-socialIcon', target: :blank do
-          = icon('instagram')
-      li
-        = mail_to 'contato@webpatas.com', class: 'Footer-socialIcon' do
+        = mail_to 'contato@webpatas.com', class: 'Footer-socialIcon', title: 'Mande um email para nós!' do
           = icon('envelope')
   span.Footer-copy
     | Copyright &copy; 2015

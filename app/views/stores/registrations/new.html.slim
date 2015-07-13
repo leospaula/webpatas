@@ -1,43 +1,66 @@
-main.gray
+main.gray.u-panelPadding
   .container
-    .col-md-6.u-colCentered
-      .BoxForm.BoxForm--padding
+    .col-md-8.u-colCentered
+      .BoxForm
         .BoxForm-head
-          h2.BoxForm-title Sign up
+          h2.BoxForm-title title='Cadastre-se' Cadastre-se
         .BoxForm-body
           = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
             = f.error_notification
             .form-inputs
+              .row
+                .col-sm-6
+                  .form-group
+                    label Nome da Loja
+                    = f.input :name, placeholder: 'Nome da Loja', title: 'Nome da sua Loja', label: false
+                .col-sm-6
+                  .form-group
+                    = f.input :cnpj, placeholder: 'CNPJ da sua Loja', title: 'CNPJ da sua Loja'
+              / TODO add contact name
               .form-group
-                = f.input :email, required: true, autofocus: true, placeholder: 'usuario@exemplo.com'
+                label Nome do Responsável
+                = f.input :name, placeholder: 'Nome do Responsável', title: 'Nome do Responsável', label: false
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :email, required: true, autofocus: true, placeholder: 'exemplo@email.com', title: 'Seu email'
+                .col-sm-6
+                  .form-group
+                    = f.input :telephone, placeholder: '(99) 9999-9999', title: 'Seu telefone'
+              .row
+                .col-sm-12
+                  .form-group
+                    = f.input :address, input_html: { class: 'geocontrast' }
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :website, placeholder: 'www.meusite.com', title: 'URL do meu site'
+                / TODO add facebook page link
+                .col-sm-6
+                  .form-group
+                    = f.input :website, placeholder: 'Facebook da loja', title: 'URL da fanpage da loja no Facebook', label: 'Facebook'
               .form-group
-                = f.input :name
+                = f.input :description, placeholder: 'Pequena descrição da loja...'
               .form-group
-                = f.input :address, input_html: { class: 'geocontrast' }
+                = f.input :logo, title: 'Logo da loja'
               .form-group
-                = f.input :telephone, placeholder: '(99) 9999-9999'
-              .form-group
-                = f.input :website, placeholder: 'www.meusite.com'
-              .form-group
-                = f.input :description
-              .form-group
-                = f.input :logo
-              .form-group
-                = f.input :accept_credit_card
-              .form-group
-                = f.input :accept_debit_card
-              .form-group
-                = f.input :delivers
-              .form-group
-                = f.input :delivery_hours
-              .form-group
-                = f.input :business_hours
-              .form-group
-                = f.input :cnpj
-              .form-group
-                = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-              .form-group
-                = f.input :password_confirmation, required: true
+                = f.input :accept_credit_card, title: 'Aceita cartão de crédito'
+                = f.input :accept_debit_card,  title: 'Aceita cartão de débito'
+                = f.input :delivers, title: 'Faz tele-entrega', label: 'Faz tele-entrega'
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :business_hours, placeholder: '8am - 7pm', title: 'Horário de funcionamento'
+                .col-sm-6
+                  .form-group
+                    = f.input :delivery_hours, placeholder: '8am - 10pm', title: 'Horário da tele-entrega', label: 'Horário da tele-entrega'
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :password, required: true, hint: ("Mínimo #{@minimum_password_length} caracteres" if @minimum_password_length), placeholder: 'Sua senha', title: 'Sua senha'
+                .col-sm-6
+                  .form-group
+                    = f.input :password_confirmation, required: true, placeholder: 'Repita sua senha', title: 'Repita sua senha'
             .BoxForm-action
-              = f.button :submit, "Sign up", class: 'Button Button--block'
+              = f.button :submit, "Cadastre-se", class: 'Button Button--block', title: 'Cadastre-se'
           = render "stores/shared/links"

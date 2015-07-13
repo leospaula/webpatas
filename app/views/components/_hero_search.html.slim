@@ -1,13 +1,23 @@
 section.heroCard.heroCard--small
   main.heroCard-middle
-    .heroCard-search
-      = form_tag search_path, method: :get
-        #remote
-          input.typeahead.u-inputInline[type="text" name="q" placeholder="O que você procura?" value="#{@product.try(:name)}"]
+    .col-md-8.u-colCentered
+      .heroCard-search
+        = form_tag search_path, method: :get
+          #remote
+            .col-sm-5
+              .row
+                input.typeahead.u-inputInline[type="text" name="q" placeholder="O que você procura?" value="#{@product.try(:name)}" title="O que você procura?"]
+                input#autocomplete-result[type="hidden" name="product_id" style="vertical-align: middle;" value="#{@product.try(:id)}"]
+                input#autocomplete-result-type[type="hidden" name="direct" value="#{@product ? 't' : 'f'}"]
+            .col-sm-4
+              .row
+                .u-pushLeft10
+                  input.u-inputInline.geocontrast[type="text" name="address" title="Digite um local"]
+            .col-sm-3
+              .row
+                .u-pushLeft10
+                  input.Button.Button--hero.Button--block[type="submit" value="Buscar" title="Buscar"]
+            .col-sm-12
+              p.heroCard-searchDescription
+                | Estamos em fase beta disponível apenas no Rio de Janeiro - RJ
 
-          input#autocomplete-result[type="hidden" name="product_id" style="vertical-align: middle;" value="#{@product.try(:id)}"]
-          input#autocomplete-result-type[type="hidden" name="direct" value="#{@product ? 't' : 'f'}"]
-          input.u-inputInline.geocontrast[type="text" name="address"]
-          input.Button.u-pushLeft10[type="submit" value="Buscar"]
-    p.heroCard-searchDescription
-      | Estamos em fase beta disponível apenas no Rio de Janeiro - RJ

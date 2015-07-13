@@ -1,18 +1,20 @@
 .Button {
   display: inline-block;
   border: 0;
-  padding: 13px;
+  padding: 19px 20px;
   background-color: $background-orange--button;
-  color: #fff;
+  color: #fff !important;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: $borderRadius--button;
   font-size: 1.4rem;
-  transition: all .4 ease;
+  line-height: 1.6rem;
+  transition: all .4s ease;
+  text-align: center;
 
   &:hover,
   &:focus {
-    background-color: $background-orangeLight--button;
+    background-color: $brownDark;
     text-decoration: none;
     color: #fff;
   }
@@ -20,17 +22,30 @@
   &:active {
     background-color: $background-orangeDark--button;
   }
+
+  .fa {
+    color: #fff;
+  }
 }
 
 .Button--hero {
   font-size: 1.6rem;
+  line-height: 1.6rem;
   font-weight: bold;
-  padding: 10px 30px;
+  padding: 19px 20px;
 }
 
-.Button--neutral {
+.Button--neutral,
+.Button--neutral:visited {
   background-color: $grayLight;
-  color: $grayDark;
+  color: $grayDark !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $background-orange--button;
+    color: #fff !important;
+  }
 }
 
 .Button--block {
@@ -42,17 +57,14 @@
 // # ========== Button sizes
 
 .Button--sm {
-  font-size: 1.0rem;
-  padding: 5px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 3px 8px 4px;
   text-transform: lowercase;
 }
 
-
-@media (max-width: #{$mobileBreak}) {
-  .Button {
-    width: 100%;
-    padding-top: 1.0rem;
-    padding-bottom: 1.0rem;
-    font-size: 1.6rem;
-  }
+.Button--md {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 13px 14px;
 }

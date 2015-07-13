@@ -7,12 +7,12 @@
   float: left;
   background-image: asset-url('logo.png');
   background-size: cover;
-  height: (88px / 2);
-  width: (357px / 2);
+  height: (88px / 1.5);
+  width: (357px / 1.5);
   cursor: pointer;
 }
 
 .Header-nav {
   float: right;
-  padding: 10px;
+  padding: 15px 10px;
 }

@@ -5,14 +5,17 @@
 .profile {
   background: #fff;
   border-bottom: 1px solid $grayLight;
+  padding: 30px 40px;
+  margin-bottom: 70px;
+  border-radius: 5px;
 }
 
 .profile-maps {
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .profile-info {
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .profile-infoList {
@@ -20,36 +23,41 @@
 }
 
 .profile-img {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .profile-title {
-  margin-bottom: 0;
+  margin-bottom: 5px;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: $orange;
+  font-weight: normal;
 }
 
 .profile-price {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
+  font-size: 1.4rem;
   color: $grayDark;
 }
 
 .profile-currency {
   color: $orange;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 
 .profile-details {
   text-transform: uppercase;
-  color: $grayDark;
+  color: $gray;
   font-size: 1.4rem;
 }
 
 .profile-detailsDesc {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .profile-billingInfo {
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 .profile-infoList {

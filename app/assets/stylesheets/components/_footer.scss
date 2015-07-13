@@ -1,8 +1,8 @@
 .Footer {
   background-color: $background-orange--footer;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
 
 .Footer-brand {
@@ -12,7 +12,7 @@
   height: (88px / 2);
   width: (357px / 2);
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .Footer-copy {
@@ -21,6 +21,8 @@
 }
 
 .Footer-social {
+  margin-bottom: 13px;
+
   li {
     display: inline-block;
   }
@@ -29,7 +31,7 @@
 .Footer-socialIcon {
   display: block;
   background-color: $background-orangeDark--footer;
-  padding-top: 5px;
+  padding-top: 4px;
   text-align: center;
   width: 40px;
   height: 40px;
@@ -39,8 +41,15 @@
   font-size: 2rem;
   cursor: pointer;
 
+  .fa {
+    color: #fff;
+  }
+
   &:hover {
     background-color: #fff;
-    color: $background-orange--footer;
+
+    .fa {
+      color: $background-orange--footer;
+    }
   }
 }

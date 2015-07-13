@@ -1,13 +1,26 @@
-- if @product.persisted? || @item.persisted?
-  = simple_form_for @item do |f|
-    = image_tag @item.product.image_1.url
-    p = @item.name
-    = f.input :product_id, as: :hidden
-    = f.input :price
-    = f.input :available
-    = f.submit
-- else
-  = simple_form_for @item, url: new_item_path, method: :get do |f|
-    #remote
-      input.typeahead[type="text" placeholder="Produto" style="width: 100%"]
-      input#autocomplete-result[type="hidden" name="product_id"]
+.BoxForm
+  .BoxForm-head
+    span.BoxForm-title title='Adicionar Produto a loja' Adicionar Produto
+    = link_to 'Cancelar', dashboard_path, class: 'Button Button--md pull-right'
+  .BoxForm-body
+    .col-md-8.u-colCentered
+      - if @product.persisted? || @item.persisted?
+        = simple_form_for @item do |f|
+          .BoxForm-details
+            .row
+              .col-sm-4
+                = image_tag @item.product.image_1.url, class: 'BoxForm-image'
+              .col-sm-8
+                .Card-title = @item.name
+                == @item.description
+          = f.input :product_id, as: :hidden
+          = f.input :price
+          = f.input :available
+          br
+          = f.submit 'Adicionar Produto', class: 'Button Button--block'
+          br
+      - else
+        = simple_form_for @item, url: new_item_path, method: :get do |f|
+          #remote
+            input.typeahead[type="text" placeholder="Produto" style="width: 100%"]
+            input#autocomplete-result[type="hidden" name="product_id"]
