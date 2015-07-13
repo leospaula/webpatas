@@ -27,7 +27,8 @@ if Rails.env.development? || ENV['RUN_SEED']
                         accept_credit_card: true, accept_debit_card: true,
                         delivers: true, delivery_hours: 'Horários',
                         address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
-                        cnpj: '20.628.338/0001-08', business_hours: 'Hora')
+                        cnpj: '20.628.338/0001-08', business_hours: 'Hora',
+                        contact_name: 'Fulano da Codeland')
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)
@@ -45,7 +46,8 @@ if Rails.env.development? || ENV['RUN_SEED']
                         accept_credit_card: false, accept_debit_card: false,
                         delivers: true, delivery_hours: 'Horários',
                         address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
-                        cnpj: '20.628.338/0002-08', business_hours: 'Hora')
+                        cnpj: '20.628.338/0002-08', business_hours: 'Hora',
+                        contact_name: 'Fulano da Codeland 2')
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)
@@ -63,7 +65,8 @@ if Rails.env.development? || ENV['RUN_SEED']
                         accept_credit_card: true, accept_debit_card: false,
                         delivers: true, delivery_hours: 'Horários',
                         address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
-                        cnpj: '20.628.338/0003-08', business_hours: 'Hora')
+                        cnpj: '20.628.338/0003-08', business_hours: 'Hora',
+                        contact_name: 'Fulano da Codeland 3')
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)
@@ -81,7 +84,8 @@ if Rails.env.development? || ENV['RUN_SEED']
                         accept_credit_card: false, accept_debit_card: false,
                         delivers: false,
                         address: 'Rua Felipe Neri, 128 - Porto Alegre/RS',
-                        cnpj: '20.628.338/0002-08', business_hours: 'Hora')
+                        cnpj: '20.628.338/0002-08', business_hours: 'Hora',
+                        contact_name: 'Fulano da Codeland 4')
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)

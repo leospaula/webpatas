@@ -12,14 +12,14 @@ class ApplicationController < ActionController::Base
                                                 :accept_credit_card,
                                                 :accept_debit_card, :delivers,
                                                 :delivery_hours, :business_hours,
-                                                :cnpj]
+                                                :cnpj, :contact_name, :facebook]
 
     devise_parameter_sanitizer.for(:account_update) << [:name, :address, :telephone,
                                                 :website, :description, :logo,
                                                 :accept_credit_card,
                                                 :accept_debit_card, :delivers,
                                                 :delivery_hours, :business_hours,
-                                                :cnpj]
+                                                :cnpj, :contact_name, :facebook]
 
   end
   protected

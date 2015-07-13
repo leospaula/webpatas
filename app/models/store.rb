@@ -10,7 +10,7 @@ class Store < ActiveRecord::Base
 
   has_many :items
 
-  validates :name, :address, :telephone, :cnpj, :business_hours, presence: true
+  validates :name, :address, :telephone, :cnpj, :business_hours, :contact_name, presence: true
 
   validates :delivery_hours, presence: true, if: :delivers?
 

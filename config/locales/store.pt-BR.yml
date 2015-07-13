@@ -7,7 +7,7 @@ pt-BR:
 
     attributes:
       store:
-        name: Nome
+        name: Nome da loja
         email: E-mail
         blocked: Bloqueado
         password: Senha
@@ -26,3 +26,5 @@ pt-BR:
         delivery_hours: Horário da tele entrega
         business_hours: Horário de funcionamento
         cnpj: CNPJ
+        contact_name: Nome do responsável
+        facebook: Facebook

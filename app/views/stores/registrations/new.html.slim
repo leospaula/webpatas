@@ -11,15 +11,12 @@ main.gray.u-panelPadding
               .row
                 .col-sm-6
                   .form-group
-                    label Nome da Loja
-                    = f.input :name, placeholder: 'Nome da Loja', title: 'Nome da sua Loja', label: false
+                    = f.input :name, placeholder: 'Nome da Loja', title: 'Nome da sua Loja'
                 .col-sm-6
                   .form-group
                     = f.input :cnpj, placeholder: 'CNPJ da sua Loja', title: 'CNPJ da sua Loja'
-              / TODO add contact name
               .form-group
-                label Nome do Responsável
-                = f.input :name, placeholder: 'Nome do Responsável', title: 'Nome do Responsável', label: false
+                = f.input :contact_name, placeholder: 'Nome do Responsável', title: 'Nome do Responsável'
               .row
                 .col-sm-6
                   .form-group
@@ -35,10 +32,9 @@ main.gray.u-panelPadding
                 .col-sm-6
                   .form-group
                     = f.input :website, placeholder: 'www.meusite.com', title: 'URL do meu site'
-                / TODO add facebook page link
                 .col-sm-6
                   .form-group
-                    = f.input :website, placeholder: 'Facebook da loja', title: 'URL da fanpage da loja no Facebook', label: 'Facebook'
+                    = f.input :facebook, placeholder: 'facebook.com/minha_loja', title: 'URL da fanpage da loja no Facebook'
               .form-group
                 = f.input :description, placeholder: 'Pequena descrição da loja...'
               .form-group

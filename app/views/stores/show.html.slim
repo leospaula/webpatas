@@ -23,15 +23,21 @@ main.gray
             div
               span.fa.fa-map-marker
               span = @store.address
-            div
-              span.fa.fa-globe
-              span
-                = link_to @store.website, target: '_blank', title: 'Site da Loja'
+            - if @store.website.present?
+              div
+                span.fa.fa-globe
+                span
+                  = link_to @store.website, target: '_blank', title: 'Site da Loja'
+            - if @store.facebook.present?
+              div
+                span.fa.fa-facebook-official
+                span
+                  = link_to @store.facebook, target: '_blank', title: 'Site da Loja'
             .profile-billingInfo
               - if @store.telephone.present?
-                .profile-infoList
-                  span.profile-details Telefone
-                  p.PriceBox-text.u-textOrange = @store.telephone
+              .profile-infoList
+                span.profile-details Telefone
+                p.PriceBox-text.u-textOrange = @store.telephone
               .profile-infoList
                 span.profile-details Entrega
                 p.PriceBox-text.u-textOrange = @store.delivers ? "Tele-entrega" : "Não"
