@@ -7,13 +7,12 @@ ActiveAdmin.register Store do
   index do
     selectable_column
     id_column
-    column :email
     column :name
-    column :confirmed_at do |store|
-      store.confirmed? ? l(store.confirmed_at, format: :long) : 'Cadastro pendente'
-    end
+    column :email
+    column :telephone
+    column :address
+    column :website
     column :blocked
-    column :created_at
     actions
   end
 
