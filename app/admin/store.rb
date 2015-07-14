@@ -1,7 +1,8 @@
 ActiveAdmin.register Store do
   permit_params :name, :address, :telephone, :website, :description, :logo,
                 :accept_credit_card,:accept_debit_card, :delivers, :blocked,
-                :delivery_hours, :business_hours, :cnpj
+                :delivery_hours, :business_hours, :cnpj, :email, :contact_name,
+                :facebook
   menu priority: 7
 
   index do
@@ -35,6 +36,8 @@ ActiveAdmin.register Store do
       f.input :delivery_hours
       f.input :business_hours
       f.input :cnpj
+      f.input :contact_name
+      f.input :facebook
     end
     f.actions
   end
