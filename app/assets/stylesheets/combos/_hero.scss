@@ -38,6 +38,8 @@
   width: 100%;
 
   @media (max-width: #{$mobileBreak}) {
+    height: calc(100% - 114px);
+
     .u-pushLeft10 {
       margin-left: 0;
     }
@@ -66,6 +68,11 @@
   color: #fff;
   margin-bottom: 10px;
   text-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
+
+  @media (max-width: #{$mobileBreak}) {
+    font-size: 4.5rem;
+    line-height: 4.9rem;
+  }
 }
 
 .heroCard-description {
@@ -75,6 +82,11 @@
   margin-left: auto;
   margin-right: auto;
   text-shadow: 1px 1px 3px rgba(0,0,0, 0.3);
+
+  @media (max-width: #{$mobileBreak}) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 }
 
 .heroCard-search {
