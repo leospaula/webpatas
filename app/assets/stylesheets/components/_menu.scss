@@ -24,3 +24,21 @@
     color: #fff;
   }
 }
+
+@media (max-width: #{$mobileBreak}) {
+  .Menu {
+    display: table;
+    width: 100%;
+  }
+
+  .Menu-item {
+    display: table-cell;
+    width: 1%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .Menu-link {
+    font-size: 1.6rem;
+  }
+}

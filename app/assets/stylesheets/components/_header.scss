@@ -16,3 +16,16 @@
   float: right;
   padding: 15px 10px;
 }
+
+
+@media (max-width: #{$mobileBreak}) {
+  .Header-brand,
+  .Header-nav {
+    display: block;
+    float: none;
+  }
+
+  .Header-brand {
+    margin: 0 auto 20px;
+  }
+}
