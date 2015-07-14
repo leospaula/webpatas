@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   scope :with_name, -> (name) { where(%q{"products"."name" ~* ?}, name) }
   scope :with_filters, -> (filters) do
     products = all
-    store_filters = filters.slice(:accept_credit_card, :accept_debit_card, :delivers)
+    store_filters = filters.slice(:accept_credit_card, :accept_debit_card, :delivers, :blocked)
     if store_filters.any?
       products = joins(items: :store).merge(Store.where(store_filters))
     end

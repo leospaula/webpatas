@@ -55,7 +55,9 @@ class SearchResult
   end
 
   def filters
-    {}.tap do |filters|
+    {
+      blocked: false
+    }.tap do |filters|
       filters[:brand] = brand if brand.present?
       filters[:accept_credit_card] = true if credit?
       filters[:accept_debit_card] = true if debit?

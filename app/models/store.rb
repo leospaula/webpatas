@@ -17,4 +17,8 @@ class Store < ActiveRecord::Base
   def accept_card?
     accept_credit_card? || accept_debit_card?
   end
+
+  def active_for_authentication?
+    super && !blocked?
+  end
 end

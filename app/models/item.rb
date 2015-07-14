@@ -16,7 +16,7 @@ class Item < ActiveRecord::Base
     where(store_id: Store.near([latitude, longitude], 3).reorder(:id).ids)
   end
   scope :with_store_filters, -> (filters) do
-    filters = filters.slice(:accept_credit_card, :accept_debit_card, :delivers)
+    filters = filters.slice(:accept_credit_card, :accept_debit_card, :delivers, :blocked)
     joins(:store).merge(Store.where(filters)) if filters.any?
   end
 end
