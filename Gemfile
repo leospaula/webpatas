@@ -32,6 +32,8 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'kaminari'
 gem 'maskedinput-rails'
 gem 'maskmoney-rails'
+# For Google Analytics events
+gem 'google-analytics-rails'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'
