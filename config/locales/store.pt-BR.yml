@@ -8,15 +8,15 @@ pt-BR:
     attributes:
       store:
         name: Nome da loja
-        email: E-mail
+        email: E-mail da loja
         blocked: Bloqueado
         password: Senha
         current_password: Senha atual
         password_confirmation: Confirmar senha
         confirmed_at: Confirmado em
         remember_me: Permanecer conectado
-        address: Endereço
-        telephone: Telefone
+        address: Endereço da loja
+        telephone: Telefone da loja
         website: Site
         description: Descrição
         logo: Logo
@@ -27,4 +27,5 @@ pt-BR:
         business_hours: Horário de funcionamento
         cnpj: CNPJ
         contact_name: Nome do responsável
+        contact_telephone: Telefone do responsável
         facebook: Facebook

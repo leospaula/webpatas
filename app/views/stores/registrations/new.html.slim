@@ -15,15 +15,20 @@ main.gray.u-panelPadding
                 .col-sm-6
                   .form-group
                     = f.input :cnpj, placeholder: 'CNPJ da sua Loja', title: 'CNPJ da sua Loja'
-              .form-group
-                = f.input :contact_name, placeholder: 'Nome do Responsável', title: 'Nome do Responsável'
               .row
                 .col-sm-6
                   .form-group
                     = f.input :email, required: true, autofocus: true, placeholder: 'exemplo@email.com', title: 'Seu email'
                 .col-sm-6
                   .form-group
-                    = f.input :telephone, placeholder: '(99) 9999-9999', title: 'Seu telefone', input_html: { class: 'js-phone' }
+                    = f.input :telephone, placeholder: '(99) 9999-9999', title: 'Telefone da Loja', input_html: { class: 'js-phone' }
+              .row
+                .col-sm-6
+                  .form-group
+                    = f.input :contact_name, placeholder: 'Nome do Responsável', title: 'Nome do Responsável'
+                .col-sm-6
+                  .form-group
+                    = f.input :contact_telephone, placeholder: '(99) 9999-9999', title: 'Telefone do Responsável', input_html: { class: 'js-phone' }
               .row
                 .col-sm-12
                   .form-group
