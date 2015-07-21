@@ -5,6 +5,7 @@
   background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  margin-bottom: 80px;
 }
 
 // # ========== Header
@@ -29,30 +30,42 @@
   &:not(:last-child) {
     border-bottom: 1px solid $grayLight;
   }
+  &:last-child {
+    padding-bottom: 40px;
+  }
 }
 
 .StoreList-block {
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  width: calc(100% - 700px);
+  // width: calc(100% - 700px);
 
   &:first-of-type {
-    width: 80px;
+    width: 100px !important;
+  }
+  &:nth-of-type(2) {
+    width: 220px;
+    @media (max-width: 1199px) {
+      width: 180px;
+    }
+  }
+  &:nth-of-type(6) {
+    width: 137px !important;
   }
 
   &:not(:nth-of-type(2)) {
-    width: 120px;
-  }
-
-  &:nth-of-type(3) {
-    width: 180px;
+    width: calc((100% - 478px) / 3);
+    @media (max-width: 1199px) {
+      width: calc((100% - 438px) / 3);
+    }
   }
 }
 
 .StoreList-title {
   font-size: 2.4rem;
   color: $orange;
+  line-height: 1.8rem;
 }
 
 .StoreList-img {
@@ -68,9 +81,8 @@
   }
 }
 
-.StoreList-action {
-  position: absolute;
-  right: 20px;
+.StoreList-price {
+  line-height: 1.8rem;
 }
 
 @media (max-width: 990px) {
@@ -86,14 +98,16 @@
 }
 
 @media (max-width: #{$mobileBreak}) {
-  .StoreList-block {
+  .StoreList-block,
+  .StoreList-block:nth-of-type(6),
+  .StoreList-block:first-of-type {
     float: none !important;
     width: 100% !important;
     text-align: center;
   }
 
   .StoreList-img {
-    margin: 0 auto;
+    margin: 0 auto !important;
   }
 
   .StoreList-item {
@@ -109,5 +123,9 @@
     margin-top: 10px;
     width: 100%;
     text-align: center;
+
+    .Button {
+      width: 100%;
+    }
   }
 }

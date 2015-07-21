@@ -1,7 +1,7 @@
 main.gray
   .container
     .row
-      .col-sm-10.u-colCentered
+      .col-md-10.u-colCentered
         .BackButton
           = link_to 'Voltar', :back, class: 'Button'
         .profile.no-margin
@@ -58,5 +58,5 @@ main.gray
                       = cards.join(', ')
                     - else
                       | Não
-              .StoreList-action.u-alignVertical
+              .StoreList-block.StoreList-action
                 = link_to "Ir para loja", store_path(item.store, item_id: item), class: 'StoreList-button Button'
