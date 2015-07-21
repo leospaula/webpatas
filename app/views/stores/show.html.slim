@@ -1,87 +1,49 @@
 main.gray
   .container
-    .BackButton
-      = link_to 'Voltar', :back, class: 'Button u-pushRight5', title: 'Voltar'
-      - if @store == current_store
-        = link_to 'Editar minha loja', edit_registration_path(current_store), class: 'Button pull-right', title: 'Editar minha loja'
-    .profile
-      .row
-        .col-md-12
-          .profile-maps
-            iframe[width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?q=#{@store.address}&output=embed"]
+    .row
+      .col-md-10.u-colCentered
+        .BackButton
+          = link_to 'Voltar', :back, class: 'Button u-pushRight5', title: 'Voltar'
+          - if @store == current_store
+            = link_to 'Editar minha loja', edit_registration_path(current_store), class: 'Button pull-right', title: 'Editar minha loja'
+        .profile
+          .row
+            .col-md-12
+              .profile-maps
+                iframe[width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?q=#{@store.address}&output=embed"]
 
-      .row
-        .col-sm-4.col-md-3
-          .profile-img
-            .Gallery
-              .Gallery-big
-                = image_tag @store.logo.url, class: 'Gallery-image' if @store.logo?
-        .col-sm-8.col-md-9
-          .profile-info
-            h1.profile-title = @store.name
-            div
-              span.fa.fa-map-marker
-              span = @store.address
-            - if @store.website.present?
-              div
-                span.fa.fa-globe
-                span
-                  = link_to @store.website, target: '_blank', title: 'Site da Loja'
-            - if @store.facebook.present?
-              div
-                span.fa.fa-facebook-official
-                span
-                  = link_to @store.facebook, target: '_blank', title: 'Site da Loja'
-            .profile-billingInfo
-              - if @store.telephone.present?
-              .profile-infoList
-                span.profile-details Telefone
-                p.PriceBox-text.u-textOrange = @store.telephone
-              .profile-infoList
-                span.profile-details Entrega
-                p.PriceBox-text.u-textOrange = @store.delivers ? "Tele-entrega" : "Não"
-              .profile-infoList
-                span.profile-details Cartões
-                p.PriceBox-text.u-textOrange
-                  - if @store.accept_debit_card && @store.accept_credit_card
-                    | Débito e Crédito
-                  - elsif @store.accept_debit_card
-                    | Débito
-                  - elsif @store.accept_credit_card
-                    | Crédito
-                  - else
-                    = "Não"
-
-            span.profile-details Horário de atendimento
-            p.profile-detailsDesc = @store.business_hours
-            - if @store.delivers
-              span.profile-details Horário de entrega
-              p.profile-detailsDesc = @store.delivery_hours
-            - if @store.description.present?
-              span.profile-details Sobre
-              p.profile-detailsDesc == @store.description
-  - if @item
-      .container
-        .row
-          .col-md-12
-            ul.StoreList
-              li.StoreList-item
-                .StoreList-block
-                  .StoreList-img
-                    = image_tag @item.image_1, class: 'u-alignVertical'
-                .StoreList-block
-                  span.StoreList-title = @item.name
-                .StoreList-block
-                  .StoreList-price
-                    span.PriceBox-text Preço
-                    p.PriceBox-price = number_to_currency(@item.price)
-                .StoreList-block
-                  .StoreList-price
-                    span.PriceBox-text.PriceBox-text--sm Entrega
-                    p.PriceBox-text.u-textOrange = @item.store.delivers ? "Tele-entrega" : "Não"
-                .StoreList-block
-                  .StoreList-price
-                    span.PriceBox-text.PriceBox-text--sm Cartão
+          .row
+            .col-sm-4.col-md-3
+              .profile-img
+                .Gallery
+                  .Gallery-big
+                    = image_tag @store.logo.url, class: 'Gallery-image' if @store.logo?
+            .col-sm-8.col-md-9
+              .profile-info
+                h1.profile-title = @store.name
+                div
+                  span.fa.fa-map-marker
+                  span = @store.address
+                - if @store.website.present?
+                  div
+                    span.fa.fa-globe
+                    span
+                      = link_to @store.website, target: '_blank', title: 'Site da Loja'
+                - if @store.facebook.present?
+                  div
+                    span.fa.fa-facebook-official
+                    span
+                      = link_to @store.facebook, target: '_blank', title: 'Site da Loja'
+                .profile-billingInfo
+                  - if @store.telephone.present?
+                  .profile-infoList
+                    span.profile-details Telefone
+                    p.PriceBox-text.u-textOrange = @store.telephone
+                  .profile-infoList
+                    span.profile-details Entrega
+                    p.PriceBox-text.u-textOrange = @store.delivers ? "Tele-entrega" : "Não"
+                  .profile-infoList
+                    span.profile-details Cartões
                     p.PriceBox-text.u-textOrange
                       - if @store.accept_debit_card && @store.accept_credit_card
                         | Débito e Crédito
@@ -91,10 +53,43 @@ main.gray
                         | Crédito
                       - else
                         = "Não"
-                .StoreList-action.u-alignVertical
-                  span.Button
-                    | (12)3456-7890
-                    div Tele-vendas
 
-
-
+                span.profile-details Horário de atendimento
+                p.profile-detailsDesc = @store.business_hours
+                - if @store.delivers
+                  span.profile-details Horário de entrega
+                  p.profile-detailsDesc = @store.delivery_hours
+                - if @store.description.present?
+                  span.profile-details Sobre
+                  p.profile-detailsDesc == @store.description
+        - if @item
+          ul.StoreList
+            li.StoreList-item
+              .StoreList-block
+                .StoreList-img
+                  = image_tag @item.image_1, class: 'u-alignVertical'
+              .StoreList-block
+                span.StoreList-title = @item.name
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text Preço
+                  p.PriceBox-price = number_to_currency(@item.price)
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text.PriceBox-text--sm Entrega
+                  p.PriceBox-text.u-textOrange = @item.store.delivers ? "Tele-entrega" : "Não"
+              .StoreList-block
+                .StoreList-price
+                  span.PriceBox-text.PriceBox-text--sm Cartão
+                  p.PriceBox-text.u-textOrange
+                    - if @store.accept_debit_card && @store.accept_credit_card
+                      | Débito e Crédito
+                    - elsif @store.accept_debit_card
+                      | Débito
+                    - elsif @store.accept_credit_card
+                      | Crédito
+                    - else
+                      = "Não"
+              .StoreList-block.StoreList-action
+                span.Button.Button--disable
+                  | (21) 34569-7890 Tele-vendas

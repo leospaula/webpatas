@@ -28,6 +28,13 @@
   }
 }
 
+.Button--disable {
+  background-color: $brownDark;
+  color: #fff;
+  cursor: default;
+  font-size: 1.2rem;
+}
+
 .Button--hero {
   font-size: 1.6rem;
   line-height: 1.6rem;
