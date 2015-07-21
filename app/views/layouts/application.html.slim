@@ -7,6 +7,7 @@ html
     = csrf_meta_tags
     = favicon_link_tag 'favicon.png'
     = analytics_init if Rails.env.production?
+    meta[content="width=device-width, initial-scale=1" name="viewport"]
 
   body class="ctrl-#{params[:controller]} act-#{params[:action]}"
     = initjs_tag "Webpatas"
