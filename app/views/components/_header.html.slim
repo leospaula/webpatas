@@ -5,7 +5,7 @@ header.Header
       ul.Menu
         - if current_store
           li.Menu-item
-            a.Menu-link href="mailto:contato@webpatas.com" title="Mande um email para nós" Contato
+            = link_to 'Contato', contact_path, title: 'Mande um email para nós', class: 'Menu-link'
           li.Menu-item
             = link_to 'Dashboard', dashboard_path, class: 'Menu-link', title: 'Dashboard da Loja'
           li.Menu-item
@@ -16,5 +16,4 @@ header.Header
           li.Menu-item
             = link_to 'Lojista', root_path(anchor: 'shop'), title: 'Para lojistas', class: 'Menu-link'
           li.Menu-item
-            a.Menu-link href="mailto:contato@webpatas.com" title="Mande um email para nós" Contato
-
+            = link_to 'Contato', contact_path, title: 'Mande um email para nós', class: 'Menu-link'

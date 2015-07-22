@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def style
   end
+
+  def contact
+  end
 end
