@@ -47,7 +47,11 @@ class SearchResult
   end
 
   def items(the_product = product)
-    @items ||= the_product.items.scoped_near(latitude, longitude).with_store_filters(filters).reorder(price: :asc)
+    @items ||= items_without_cache(the_product)
+  end
+
+  def items_without_cache(the_product)
+    the_product.items.scoped_near(latitude, longitude).with_store_filters(filters).reorder(price: :asc)
   end
 
   def products
@@ -78,7 +82,7 @@ class SearchResult
 
   def list_results
     products.map do |product|
-      items = items(product)
+      items = items_without_cache(product)
       ListProduct.new(items.minimum(:price), items.maximum(:price), items.count, product)
     end
   end
