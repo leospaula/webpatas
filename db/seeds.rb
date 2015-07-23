@@ -32,12 +32,8 @@ if Rails.env.development? || ENV['RUN_SEED']
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)
-  item = Item.create!(product: product, available: true, price: 15.00, store: store)
-  item = Item.create!(product: product, available: true, price: 20.00, store: store)
 
   item = Item.create!(product: product2, available: true, price: 20.00, store: store)
-  item = Item.create!(product: product2, available: true, price: 10.00, store: store)
-  item = Item.create!(product: product2, available: true, price: 15.00, store: store)
 
   # Store with deliver but without cards
 
@@ -51,11 +47,7 @@ if Rails.env.development? || ENV['RUN_SEED']
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)
-  item = Item.create!(product: product, available: true, price: 15.00, store: store)
-  item = Item.create!(product: product, available: true, price: 20.00, store: store)
 
-  item = Item.create!(product: product2, available: true, price: 20.00, store: store)
-  item = Item.create!(product: product2, available: true, price: 10.00, store: store)
   item = Item.create!(product: product2, available: true, price: 15.00, store: store)
 
   # Store with deliver+credit but without debit
@@ -70,12 +62,8 @@ if Rails.env.development? || ENV['RUN_SEED']
   store.confirm
 
   item = Item.create!(product: product, available: true, price: 10.00, store: store)
-  item = Item.create!(product: product, available: true, price: 15.00, store: store)
-  item = Item.create!(product: product, available: true, price: 20.00, store: store)
 
-  item = Item.create!(product: product2, available: true, price: 20.00, store: store)
   item = Item.create!(product: product2, available: true, price: 10.00, store: store)
-  item = Item.create!(product: product2, available: true, price: 15.00, store: store)
 
   # Store with deliver+debit but without credit
 
@@ -88,11 +76,7 @@ if Rails.env.development? || ENV['RUN_SEED']
                         contact_name: 'Fulano da Codeland 4')
   store.confirm
 
-  item = Item.create!(product: product, available: true, price: 10.00, store: store)
-  item = Item.create!(product: product, available: true, price: 15.00, store: store)
   item = Item.create!(product: product, available: true, price: 20.00, store: store)
 
-  item = Item.create!(product: product2, available: true, price: 20.00, store: store)
-  item = Item.create!(product: product2, available: true, price: 10.00, store: store)
   item = Item.create!(product: product2, available: true, price: 15.00, store: store)
 end
