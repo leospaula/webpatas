@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
   belongs_to :store
 
   validates :price, :store, presence: true
+  validates :product, uniqueness: { scope: :store, message: 'Produto já cadastrado nesta loja' }
 
   delegate :name, :description, :technical_information, :brand, :reference,
     :sku, :image_1, :image_2, :image_3, :image_1?, :image_2?, :image_3?,
