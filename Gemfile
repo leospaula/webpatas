@@ -43,3 +43,8 @@ group :development, :test do
   gem 'thin'
   gem 'letter_opener'
 end
+
+group :production do
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'passenger', '~> 5.0'
+end
